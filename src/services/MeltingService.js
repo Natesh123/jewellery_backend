@@ -176,14 +176,17 @@ const updateMeltProduct = async (id, data) => {
 
 const getAllSmith = async () => {
   const connection = await pool.promise().getConnection();
-  let baseQuery = `SELECT * FROM account_head_creation WHERE group_code='S09'`;
   try {
-    const [rows] = await connection.query(baseQuery)
-    return { data: rows }
+    let baseQuery = `SELECT * FROM account_head_creation WHERE group_code='S09'`;
+    const [rows] = await connection.query(baseQuery);
+    return { data: rows };
   } catch (error) {
-    console.error("Error in getAllSmith :", error)
+    console.error("Error in getAllSmith :", error);
+    throw error;
+  } finally {
+    connection.release();
   }
-}
+};
 
 
 const getAllWages = async (req) => {
@@ -476,116 +479,129 @@ const createMeltingPurchase = async (id) => {
 };
 const getAllkMeltingPurchases = async ({ page, limit, search, metal, status }) => {
   const connection = await pool.promise().getConnection();
-  let whereClause = 'WHERE 1=1';
-  const params = [];
+  try {
+    let whereClause = 'WHERE 1=1';
+    const params = [];
 
-  if (search) {
-    whereClause += ' AND (customer_name LIKE ? OR purchase_id LIKE ?)';
-    params.push(`%${search}%`, `%${search}%`);
-  }
-  if (metal) {
-    whereClause += ' AND products LIKE ?';
-    params.push(`%${metal}%`);
-  }
-  if (status) {
-    whereClause += ' AND status = ?';
-    params.push(status);
-  }
-
-  const offset = (page - 1) * limit;
-
-  const [purchases] = await connection.query(
-    `SELECT * FROM melting_purchase ${whereClause} ORDER BY id DESC LIMIT ? OFFSET ?`,
-    [...params, limit, offset]
-  );
-  const [[{ total }]] = await connection.query(
-    `SELECT COUNT(*) AS total FROM melting_purchase ${whereClause}`,
-    params
-  );
-
-
-  for (const purchase of purchases) {
-    try {
-      purchase.products = purchase.products ? JSON.parse(purchase.products) : [];
-    } catch {
-      purchase.products = [];
+    if (search) {
+      whereClause += ' AND (customer_name LIKE ? OR purchase_id LIKE ?)';
+      params.push(`%${search}%`, `%${search}%`);
+    }
+    if (metal) {
+      whereClause += ' AND products LIKE ?';
+      params.push(`%${metal}%`);
+    }
+    if (status) {
+      whereClause += ' AND status = ?';
+      params.push(status);
     }
 
-    if (purchase.pledge_status == 1) {
-      const [quotationRows] = await connection.query(
-        'SELECT * FROM pledge_quotations WHERE quotation_id=?',
-        [purchase.quotation_id]
-      );
+    const offset = (page - 1) * limit;
 
-      if (quotationRows.length > 0) {
-        const quotation = quotationRows[0];
-        const [pledgeRows] = await connection.query(
-          'SELECT * FROM pledge_items WHERE id=?',
-          [quotation.pledge_id]
+    const [purchases] = await connection.query(
+      `SELECT * FROM melting_purchase ${whereClause} ORDER BY id DESC LIMIT ? OFFSET ?`,
+      [...params, limit, offset]
+    );
+    const [[{ total }]] = await connection.query(
+      `SELECT COUNT(*) AS total FROM melting_purchase ${whereClause}`,
+      params
+    );
+
+
+    for (const purchase of purchases) {
+      try {
+        purchase.products = purchase.products ? JSON.parse(purchase.products) : [];
+      } catch {
+        purchase.products = [];
+      }
+
+      if (purchase.pledge_status == 1) {
+        const [quotationRows] = await connection.query(
+          'SELECT * FROM pledge_quotations WHERE quotation_id=?',
+          [purchase.quotation_id]
         );
-        purchase.accounts_amount = pledgeRows.length > 0 ? pledgeRows[0].accounts_amount : null;
+
+        if (quotationRows.length > 0) {
+          const quotation = quotationRows[0];
+          const [pledgeRows] = await connection.query(
+            'SELECT * FROM pledge_items WHERE id=?',
+            [quotation.pledge_id]
+          );
+          purchase.accounts_amount = pledgeRows.length > 0 ? pledgeRows[0].accounts_amount : null;
+        }
       }
     }
+    return { purchases, total };
+  } catch (error) {
+    console.error("Error in getAllkMeltingPurchases:", error);
+    throw error;
+  } finally {
+    connection.release();
   }
-  return { purchases, total };
-
 };
 
 const getAllMeltPurchases = async ({ page, limit, search, metal, status }) => {
   const connection = await pool.promise().getConnection();
-  let whereClause = 'WHERE 1=1';
-  const params = [];
+  try {
+    let whereClause = 'WHERE 1=1';
+    const params = [];
 
-  if (search) {
-    whereClause += ' AND (s.customer_name LIKE ? OR s.purchase_id LIKE ?)';
-    params.push(`%${search}%`, `%${search}%`);
-  }
-  if (metal) {
-    whereClause += ' AND s.products LIKE ?';
-    params.push(`%${metal}%`);
-  }
-  if (status) {
-    whereClause += ' AND s.status = ?';
-    params.push(status);
-  }
-
-  whereClause += ' AND s.purchase_id IN (SELECT purchase_id FROM melting_purchase)';
-
-
-  whereClause += ' AND s.melt_status = "pending"';
-
-  const offset = (page - 1) * limit;
-
-  const [purchases] = await connection.query(
-    `
-    SELECT s.*
-    FROM stock s
-    ${whereClause}
-    ORDER BY s.id DESC
-    LIMIT ? OFFSET ?
-    `,
-    [...params, limit, offset]
-  );
-
-
-  const [[{ total }]] = await connection.query(
-    `
-    SELECT COUNT(*) AS total
-    FROM stock s
-    ${whereClause}
-    `,
-    params
-  );
-
-  for (const purchase of purchases) {
-    try {
-      purchase.products = purchase.products ? JSON.parse(purchase.products) : [];
-    } catch {
-      purchase.products = [];
+    if (search) {
+      whereClause += ' AND (s.customer_name LIKE ? OR s.purchase_id LIKE ?)';
+      params.push(`%${search}%`, `%${search}%`);
     }
-  }
+    if (metal) {
+      whereClause += ' AND s.products LIKE ?';
+      params.push(`%${metal}%`);
+    }
+    if (status) {
+      whereClause += ' AND s.status = ?';
+      params.push(status);
+    }
 
-  return { purchases, total };
+    whereClause += ' AND s.purchase_id IN (SELECT purchase_id FROM melting_purchase)';
+
+
+    whereClause += ' AND s.melt_status = "pending"';
+
+    const offset = (page - 1) * limit;
+
+    const [purchases] = await connection.query(
+      `
+      SELECT s.*
+      FROM stock s
+      ${whereClause}
+      ORDER BY s.id DESC
+      LIMIT ? OFFSET ?
+      `,
+      [...params, limit, offset]
+    );
+
+
+    const [[{ total }]] = await connection.query(
+      `
+      SELECT COUNT(*) AS total
+      FROM stock s
+      ${whereClause}
+      `,
+      params
+    );
+
+    for (const purchase of purchases) {
+      try {
+        purchase.products = purchase.products ? JSON.parse(purchase.products) : [];
+      } catch {
+        purchase.products = [];
+      }
+    }
+
+    return { purchases, total };
+  } catch (error) {
+    console.error("Error in getAllMeltPurchases:", error);
+    throw error;
+  } finally {
+    connection.release();
+  }
 };
 
 
@@ -716,11 +732,18 @@ const updatePurchaseMeltingProduct = async (id, updateData) => {
 
 const getMeltPurchaseById = async (id) => {
   const connection = await pool.promise().getConnection();
-  const [rows] = await connection.query(
-    `SELECT * FROM melting_purchase WHERE id = ?`,
-    [id]
-  );
-  return rows.length ? rows[0] : null;
+  try {
+    const [rows] = await connection.query(
+      `SELECT * FROM melting_purchase WHERE id = ?`,
+      [id]
+    );
+    return rows.length ? rows[0] : null;
+  } catch (error) {
+    console.error("Error in getMeltPurchaseById:", error);
+    throw error;
+  } finally {
+    connection.release();
+  }
 };
 
 const updateMeltDetails = async (id, updateData) => {
