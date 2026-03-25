@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .otp-code { 
+            font-size: 24px; 
+            font-weight: bold; 
+            letter-spacing: 2px;
+            color: #2563eb;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your One-Time Password (OTP)</h2>
+        <p>Please use the following OTP to verify your identity:</p>
+        
+        <div class="otp-code"><%= otp %></div>
+        
+        <p>This OTP is valid for <%= expiryMinutes %> minutes. Please do not share it with anyone.</p>
+        
+        <p>If you didn't request this OTP, please ignore this email.</p>
+        
+        <p>Best regards,<br>Your App Team</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @page { margin: 0; size: 3in auto; }
+    body { 
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 9px;
+      padding: 5px;
+      width: 100%;
+      max-width: 3in;
+      color: #333;
+    }
+    .company-header {
+      text-align: center;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 2px dashed #d4af37;
+    }
+    .company-logo {
+      height: 40px;
+      margin: 0 auto 5px;
+      display: block;
+    }
+    .company-name {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0;
+      color: #d4af37;
+    }
+    .company-details {
+      font-size: 7px;
+      margin: 2px 0;
+      color: #666;
+    }
+    .document-title {
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .section {
+      margin: 8px 0;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 10px;
+      border-bottom: 1px solid #d4af37;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+    .customer-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      font-size: 8px;
+    }
+    .info-item {
+      margin: 2px 0;
+    }
+    .info-label {
+      font-weight: bold;
+      color: #d4af37;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 5px 0;
+      font-size: 8px;
+    }
+    th {
+      background-color: #f5f5f5;
+      padding: 4px;
+      text-align: left;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+    }
+    td {
+      padding: 4px;
+      border-bottom: 1px solid #eee;
+    }
+    .text-right {
+      text-align: right;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .total-row {
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+    .footer {
+      text-align: center;
+      font-size: 7px;
+      margin-top: 10px;
+      padding-top: 5px;
+      border-top: 1px dashed #d4af37;
+      color: #666;
+    }
+    .signature-line {
+      border-top: 1px solid #333;
+      width: 60%;
+      margin: 15px auto 5px;
+    }
+    .prepared-by {
+      margin-top: 10px;
+      font-size: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="company-header">
+    <img src="{{company_logo}}" class="company-logo" alt="Company Logo">
+    <h1 class="company-name">{{company_name}}</h1>
+    <div class="company-details">
+      {{company_address}} | {{company_phone}}<br>
+      {{branch_name}}
+    </div>
+  </div>
+
+  <div class="document-title">QUOTATION</div>
+
+  <div class="section">
+    <div class="section-title">QUOTATION DETAILS</div>
+    <div class="info-item"><span class="info-label">Quotation #:</span> {{quotation_id}}</div>
+    <div class="info-item"><span class="info-label">Date:</span> {{created_at}}</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">CUSTOMER DETAILS</div>
+    <div class="customer-info">
+      <div>
+        <div class="info-item"><span class="info-label">Name:</span> {{customer_name}}</div>
+        <div class="info-item"><span class="info-label">Phone:</span> {{customer_phone}}</div>
+        <!-- <div class="info-item"><span class="info-label">Email:</span> {{customer_email}}</div> -->
+      </div>
+      <div>
+        <div class="info-item"><span class="info-label">Aadhar:</span> {{aadhar_no}}</div>
+        <div class="info-item"><span class="info-label">PAN:</span> {{pan_no}}</div>
+      </div>
+    </div>
+    <div class="info-item"><span class="info-label">Address:</span> {{customer_address}}</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">PRODUCT DETAILS</div>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item</th>
+          
+          <th class="text-right">Gross Weight(g)</th>
+          <th class="text-right">Net Weight(g)</th>
+          <th class="text-right">Rate</th>
+          <th class="text-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#products}}
+        <tr>
+           <td>{{sno}}</td>
+          <td>{{sub_product}}</td>
+
+          <td class="text-right">{{gross_weight}}</td>
+          <td class="text-right">{{final_weight}}</td>
+          <td class="text-right">{{rate}}</td>
+          <td class="text-right">₹{{amount}}</td>
+        </tr>
+        {{/products}}
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td colspan="5" class="text-right">TOTAL:</td>
+          <td class="text-right">₹{{total_amount}}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="prepared-by">
+    <div class="info-item"><span class="info-label">Prepared By:</span> {{prepared_by}}</div>
+    <div class="info-item"><span class="info-label">Contact:</span> {{user_contact}}</div>
+  </div>
+
+  <div class="section">
+    <div class="signature-line"></div>
+    <div class="text-center">Authorized Signature</div>
+  </div>
+
+  <div class="footer">
+    Thank you for your business!<br>
+    {{company_name}} | {{company_phone}}<br>
+    Terms & Conditions Apply
+  </div>
+</body>
+</html>
