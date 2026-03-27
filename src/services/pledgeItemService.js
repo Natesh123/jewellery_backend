@@ -154,7 +154,7 @@ const assigneExecutive = async (pledgeId, step2Data) => {
             `UPDATE pledge_items 
              SET regional_id = ?, regional_status = ? ,approval_accounts_id = ?
              WHERE id = ?`,
-            [uid, step2Data.regional_status, execRows2[0].id, pledgeId]
+            [uid, step2Data.regional_status, execRows2[0]?.id || null, pledgeId]
         );
         await connection.commit();
         return await getPledgeById(pledgeId);
@@ -701,73 +701,73 @@ const getAllPledges = async (page = 1, limit = 10, id) => {
 const getPledges = async (page = 1, limit = 10, filters = {}) => {
     const connection = await pool.promise().getConnection();
     try {
-      page = Number(page) || 1;
-      limit = Number(limit) || 10;
-      const offset = (page - 1) * limit;
-  
-      let where = [];
-      let values = [];
-  
-      // 🔹 Status filters
-      if (filters.approval !== undefined && filters.approval !== '') {
-        where.push("p.approval = ?");
-        values.push(filters.approval);
-      }
-  
-      if (filters.accounts_status !== undefined && filters.accounts_status !== '') {
-        where.push("p.accounts_status = ?");
-        values.push(filters.accounts_status);
-      }
-  
-      if (filters.finance_status !== undefined && filters.finance_status !== '') {
-        where.push("p.finance_status = ?");
-        values.push(filters.finance_status);
-      }
-  
-      // 🔹 Date filter - FIXED
-      if (filters.fromDate && filters.toDate) {
-        // Convert to UTC date range
-        const fromDate = new Date(filters.fromDate + 'T00:00:00.000Z');
-        const toDate = new Date(filters.toDate + 'T23:59:59.999Z');
-        
-        where.push("p.created_at BETWEEN ? AND ?");
-        values.push(fromDate, toDate);
-      } else if (filters.fromDate) {
-        const fromDate = new Date(filters.fromDate + 'T00:00:00.000Z');
-        where.push("p.created_at >= ?");
-        values.push(fromDate);
-      } else if (filters.toDate) {
-        const toDate = new Date(filters.toDate + 'T23:59:59.999Z');
-        where.push("p.created_at <= ?");
-        values.push(toDate);
-      }
-  
-      // 🔹 Search filter (customer name or ID)
-      if (filters.search) {
-        where.push("(c.customer_name LIKE ? OR c.customer_id LIKE ? OR p.pledge_id LIKE ?)");
-        const searchTerm = `%${filters.search}%`;
-        values.push(searchTerm, searchTerm, searchTerm);
-      }
-  
-      // 🔹 Metal filter (based on product_details)
-      if (filters.metal) {
-        // This requires JSON search in product_details
-        where.push("JSON_SEARCH(p.product_details, 'one', ?) IS NOT NULL");
-        values.push(`%${filters.metal}%`);
-      }
-  
-      const whereClause = where.length ? `WHERE ${where.join(" AND ")}` : "";
-  
-      // 🔹 Total Count
-      const countQuery = where.length 
-        ? `SELECT COUNT(*) AS total FROM pledge_items p LEFT JOIN customers c ON c.customer_id = p.customer_id ${whereClause}`
-        : `SELECT COUNT(*) AS total FROM pledge_items p ${whereClause}`;
-      
-      const [[{ total }]] = await connection.query(countQuery, values);
-  
-      // 🔹 Main Query with JOINs
-      const [rows] = await connection.query(
-        `SELECT
+        page = Number(page) || 1;
+        limit = Number(limit) || 10;
+        const offset = (page - 1) * limit;
+
+        let where = [];
+        let values = [];
+
+        // 🔹 Status filters
+        if (filters.approval !== undefined && filters.approval !== '') {
+            where.push("p.approval = ?");
+            values.push(filters.approval);
+        }
+
+        if (filters.accounts_status !== undefined && filters.accounts_status !== '') {
+            where.push("p.accounts_status = ?");
+            values.push(filters.accounts_status);
+        }
+
+        if (filters.finance_status !== undefined && filters.finance_status !== '') {
+            where.push("p.finance_status = ?");
+            values.push(filters.finance_status);
+        }
+
+        // 🔹 Date filter - FIXED
+        if (filters.fromDate && filters.toDate) {
+            // Convert to UTC date range
+            const fromDate = new Date(filters.fromDate + 'T00:00:00.000Z');
+            const toDate = new Date(filters.toDate + 'T23:59:59.999Z');
+
+            where.push("p.created_at BETWEEN ? AND ?");
+            values.push(fromDate, toDate);
+        } else if (filters.fromDate) {
+            const fromDate = new Date(filters.fromDate + 'T00:00:00.000Z');
+            where.push("p.created_at >= ?");
+            values.push(fromDate);
+        } else if (filters.toDate) {
+            const toDate = new Date(filters.toDate + 'T23:59:59.999Z');
+            where.push("p.created_at <= ?");
+            values.push(toDate);
+        }
+
+        // 🔹 Search filter (customer name or ID)
+        if (filters.search) {
+            where.push("(c.customer_name LIKE ? OR c.customer_id LIKE ? OR p.pledge_id LIKE ?)");
+            const searchTerm = `%${filters.search}%`;
+            values.push(searchTerm, searchTerm, searchTerm);
+        }
+
+        // 🔹 Metal filter (based on product_details)
+        if (filters.metal) {
+            // This requires JSON search in product_details
+            where.push("JSON_SEARCH(p.product_details, 'one', ?) IS NOT NULL");
+            values.push(`%${filters.metal}%`);
+        }
+
+        const whereClause = where.length ? `WHERE ${where.join(" AND ")}` : "";
+
+        // 🔹 Total Count
+        const countQuery = where.length
+            ? `SELECT COUNT(*) AS total FROM pledge_items p LEFT JOIN customers c ON c.customer_id = p.customer_id ${whereClause}`
+            : `SELECT COUNT(*) AS total FROM pledge_items p ${whereClause}`;
+
+        const [[{ total }]] = await connection.query(countQuery, values);
+
+        // 🔹 Main Query with JOINs
+        const [rows] = await connection.query(
+            `SELECT
             p.*,
             p.id as pledge_db_id,
             c.id AS customer_db_id,
@@ -791,74 +791,74 @@ const getPledges = async (page = 1, limit = 10, filters = {}) => {
          ${whereClause}
          ORDER BY p.id DESC
          LIMIT ? OFFSET ?`,
-        [...values, limit, offset]
-      );
-  
-      // 🔹 Response Mapping
-      const result = rows.map((p) => {
-        const product_details = safeJSONParse(p.product_details) || [];
-  
-        const totalWeight = product_details
-          .reduce((sum, i) => sum + parseFloat(i.net_weight || 0), 0);
-        
-        const totalAmount = product_details
-          .reduce((sum, i) => sum + parseFloat(i.amount || 0), 0);
-  
-        return {
-          pledge_id: p.pledge_id || `#PLEDAM${p.id}`,
-          ...p,
-          weight: parseFloat(totalWeight.toFixed(3)),
-          amount: parseFloat(totalAmount.toFixed(2)),
-          created_user: {
-            id: p.created_user,
-            username: p.username,
-            role: p.role,
-          },
-          customer_data: {
-            id: p.customer_db_id,
-            customer_id: p.customer_id,
-            customer_name: p.customer_name,
-            customer_photo: p.customer_photo,
-            aadhar_no: p.aadhar_no,
-            pan_no: p.pan_no,
-            address_1: p.address_1,
-            address_2: p.address_2,
-            area: p.area,
-            city: p.city,
-            pincode: p.pincode,
-            district: p.district,
-            state: p.state,
-            phoneno: p.phoneno,
-          },
-          ornament_photo: p.ornament_photo
-            ? `${process.env.BASE_URL}/public/uploads/pledge_items/${p.ornament_photo}`
-            : null,
-          bill: p.bill
-            ? `${process.env.BASE_URL}/public/uploads/pledge_items/${p.bill}`
-            : null,
-          product_details
-        };
-      });
-  
-      return {
-        total,
-        page,
-        limit,
-        totalPages: Math.ceil(total / limit),
-        data: result
-      };
-  
-    } catch (error) {
-      console.error("Error in getPledges:", error);
-      throw error;
-    } finally {
-      connection.release();
-    }
-  };
+            [...values, limit, offset]
+        );
 
-  
-  
-  
+        // 🔹 Response Mapping
+        const result = rows.map((p) => {
+            const product_details = safeJSONParse(p.product_details) || [];
+
+            const totalWeight = product_details
+                .reduce((sum, i) => sum + parseFloat(i.net_weight || 0), 0);
+
+            const totalAmount = product_details
+                .reduce((sum, i) => sum + parseFloat(i.amount || 0), 0);
+
+            return {
+                pledge_id: p.pledge_id || `#PLEDAM${p.id}`,
+                ...p,
+                weight: parseFloat(totalWeight.toFixed(3)),
+                amount: parseFloat(totalAmount.toFixed(2)),
+                created_user: {
+                    id: p.created_user,
+                    username: p.username,
+                    role: p.role,
+                },
+                customer_data: {
+                    id: p.customer_db_id,
+                    customer_id: p.customer_id,
+                    customer_name: p.customer_name,
+                    customer_photo: p.customer_photo,
+                    aadhar_no: p.aadhar_no,
+                    pan_no: p.pan_no,
+                    address_1: p.address_1,
+                    address_2: p.address_2,
+                    area: p.area,
+                    city: p.city,
+                    pincode: p.pincode,
+                    district: p.district,
+                    state: p.state,
+                    phoneno: p.phoneno,
+                },
+                ornament_photo: p.ornament_photo
+                    ? `${process.env.BASE_URL}/public/uploads/pledge_items/${p.ornament_photo}`
+                    : null,
+                bill: p.bill
+                    ? `${process.env.BASE_URL}/public/uploads/pledge_items/${p.bill}`
+                    : null,
+                product_details
+            };
+        });
+
+        return {
+            total,
+            page,
+            limit,
+            totalPages: Math.ceil(total / limit),
+            data: result
+        };
+
+    } catch (error) {
+        console.error("Error in getPledges:", error);
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+
+
+
 // const getPledges = async (page = 1, limit = 10) => {
 //     const connection = await pool.promise().getConnection();
 //     try {
@@ -1148,12 +1148,12 @@ const getAllAccountsPledges = async (page = 1, limit = 10, id) => {
         const offset = (page - 1) * limit;
 
         const [[{ total }]] = await connection.query(
-            'SELECT COUNT(*) AS total FROM pledge_items WHERE money_request_id = ?',
-            [id]
+            'SELECT COUNT(*) AS total FROM pledge_items WHERE (money_request_id = ? OR reference = ?)',
+            [id, id]
         );
         const [pledges] = await connection.query(
-            'SELECT * FROM pledge_items WHERE money_request_id = ? ORDER BY id DESC LIMIT ? OFFSET ?',
-            [id, limit, offset]
+            'SELECT * FROM pledge_items WHERE (money_request_id = ? OR reference = ?) ORDER BY id DESC LIMIT ? OFFSET ?',
+            [id, id, limit, offset]
         );
 
         const result = [];
@@ -1427,7 +1427,7 @@ const getAllManagerPledges = async (page = 1, limit = 10, id) => {
         const offset = (page - 1) * limit;
 
         const [[{ total }]] = await connection.query(
-            'SELECT COUNT(*) AS total FROM pledge_items WHERE manager = ? AND approval_accounts_status = 1 AND regional_manager_status = 1 ',
+            'SELECT COUNT(*) AS total FROM pledge_items WHERE manager = ? AND approval_accounts_status = 1 AND regional_manager_status = 1',
             [id]
         );
         const [pledges] = await connection.query(
@@ -1595,12 +1595,12 @@ const getAllAccountsApprovalPledges = async (page = 1, limit = 10, id) => {
         limit = Number(limit) || 10;
         const offset = (page - 1) * limit;
         const [[{ total }]] = await connection.query(
-            'SELECT COUNT(*) AS total FROM pledge_items WHERE approval_accounts_id = ? AND regional_status = 1',
-            [id]
+            'SELECT COUNT(*) AS total FROM pledge_items WHERE (approval_accounts_id = ? OR regional_id = ?) AND regional_status = 1',
+            [id, id]
         );
         const [pledges] = await connection.query(
-            'SELECT * FROM pledge_items WHERE approval_accounts_id = ? AND regional_status = 1 ORDER BY id DESC LIMIT ? OFFSET ?',
-            [id, limit, offset]
+            'SELECT * FROM pledge_items WHERE (approval_accounts_id = ? OR regional_id = ?) AND regional_status = 1 ORDER BY id DESC LIMIT ? OFFSET ?',
+            [id, id, limit, offset]
         );
         const result = [];
         for (const pledge of pledges) {
@@ -1627,8 +1627,8 @@ const getAllAccountsApprovalPledges = async (page = 1, limit = 10, id) => {
                     role: creator?.role,
                 },
                 customer_data: customer,
-                ornament_photo: pledge.ornament_photo ? `/uploads/pledge_items/${pledge.ornament_photo}` : null,
-                bill: pledge.bill ? `/uploads/pledge_items/${pledge.bill}` : null,
+                ornament_photo: pledge.ornament_photo ? `/public/uploads/pledge_items/${pledge.ornament_photo}` : null,
+                bill: pledge.bill ? `/public/uploads/pledge_items/${pledge.bill}` : null,
                 product_details
             });
         }
