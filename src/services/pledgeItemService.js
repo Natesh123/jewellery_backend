@@ -242,47 +242,77 @@ const updateMoneyRequest = async (pledgeId, step2Data) => {
 
     const connection = await pool.promise().getConnection();
     try {
-        // Find user's company and branch
-        const [userRows] = await connection.query(
-            `SELECT company_id, branch_id 
-         FROM user_details 
-         WHERE user_id = ?`,
+        // Find user's company, branch and role
+        const [[userRows]] = await connection.query(
+            `SELECT company_id, branch_id, role 
+             FROM user_details ud
+             JOIN users u ON u.id = ud.user_id
+             WHERE ud.user_id = ?`,
             [step2Data.user_id]
         );
-        if (!userRows.length) throw new Error("User not found");
+        if (!userRows) throw new Error("User not found");
 
-        const { company_id, branch_id } = userRows[0];
+        const { company_id, branch_id, role } = userRows;
 
-        // Find first role=6 user in same company & branch
-        const [execRows] = await connection.query(
-            `SELECT u.id 
-         FROM users u
-         JOIN user_details ud ON u.id = ud.user_id
-         WHERE u.role = 6 AND ud.company_id = ? AND ud.branch_id = ?
-         LIMIT 1`,
-            [company_id, branch_id]
-        );
-        if (!execRows.length) throw new Error("No executive found for branch");
+        let manager_id = null;
+        let accounts_id = null;
+
+        // If sender is Sales Executive (role 5), find Accounts (role 6)
+        if (role == 5) {
+            const [accRows] = await connection.query(
+                `SELECT u.id FROM users u
+                 JOIN user_details ud ON u.id = ud.user_id
+                 WHERE u.role = 6 AND ud.company_id = ? AND ud.branch_id = ?
+                 LIMIT 1`,
+                [company_id, branch_id]
+            );
+            accounts_id = accRows[0]?.id || null;
+        }
+        // If sender is Accounts (role 6), find Manager (role 2 or 7)
+        else if (role == 6) {
+            const [mgrRows] = await connection.query(
+                `SELECT u.id FROM users u
+                 JOIN user_details ud ON u.id = ud.user_id
+                 WHERE u.role IN (2, 7) AND ud.company_id = ? AND ud.branch_id = ?
+                 ORDER BY FIELD(u.role, 2, 7)
+                 LIMIT 1`,
+                [company_id, branch_id]
+            );
+            manager_id = mgrRows[0]?.id || null;
+        }
 
         // Update pledge
+        let accounts_status = null;
+        if (step2Data.money_rquest_status == '3') accounts_status = 1;
+        if (step2Data.money_rquest_status == '4') accounts_status = 2;
+
         await connection.query(
             `UPDATE pledge_items 
-         SET money_request_lat = ?, money_requet_lng = ?, money_rquest_status = ?, accounts_id = ?
-         WHERE id = ?`,
+             SET money_request_lat = ?, 
+                 money_requet_lng = ?, 
+                 money_rquest_status = ?, 
+                 accounts_status = COALESCE(?, accounts_status),
+                 accounts_id = COALESCE(?, accounts_id),
+                 manager_approvel_id = COALESCE(?, manager_approvel_id),
+                 collection_id = COALESCE(?, collection_id)
+             WHERE id = ?`,
             [
                 step2Data.money_request_lat,
                 step2Data.money_requet_lng,
                 step2Data.money_rquest_status,
-                execRows[0].id,
+                accounts_status,
+                accounts_id,
+                manager_id,
+                manager_id,
                 pledgeId,
             ]
         );
 
-        // Return updated pledge
         return await getPledgeById(pledgeId);
 
     } catch (error) {
-        throw new Error(`Failed to update pledge: ${error.message}`);
+        console.error("Error in updateMoneyRequest:", error);
+        throw new Error(`Failed to update money request: ${error.message}`);
     } finally {
         connection.release();
     }
@@ -520,20 +550,87 @@ const assigneRegigonalApproval = async (pledgeId, step2Data) => {
 
     const connection = await pool.promise().getConnection();
     try {
+        await connection.beginTransaction();
+
+        // 1. Get company and branch info from the sender (manager)
+        const [userRows] = await connection.query(
+            `SELECT company_id, branch_id 
+             FROM user_details 
+             WHERE user_id = ?`,
+            [step2Data.user_id]
+        );
+
+        if (!userRows.length) throw new Error("User not found");
+        const { company_id, branch_id } = userRows[0];
+
+        // 2. Find Regional Manager (Role 7) assigned to this branch
+        const [execRows] = await connection.query(
+            `SELECT u.id as user_id, ud.branches
+             FROM users u
+             JOIN user_details ud ON u.id = ud.user_id
+             WHERE u.role = 7 AND ud.company_id = ?`,
+            [company_id]
+        );
+
+        let uid = null;
+        for (let exec of execRows) {
+            let branches = [];
+            try {
+                branches = JSON.parse(exec.branches || "[]");
+            } catch (e) {
+                console.error("Error parsing branches for user", exec.user_id, e);
+                continue;
+            }
+            if (branches.includes(branch_id)) {
+                uid = exec.user_id;
+                break;
+            }
+        }
+
+        // If no specifically assigned manager found, pick the first role 7 for the company
+        if (!uid && execRows.length > 0) {
+            uid = execRows[0].user_id;
+        }
+
+        if (!uid) throw new Error("No Regional Manager found for this branch or company");
+
+        // 3. Find Accounts Approval (Role 6) for the company
+        const [execRows2] = await connection.query(
+            `SELECT u.id 
+             FROM users u
+             JOIN user_details ud ON u.id = ud.user_id
+             WHERE u.role = 6 AND ud.company_id = ? 
+             LIMIT 1`,
+            [company_id]
+        );
+
+        // 4. Update the pledge with both status and assignments
         const [result] = await connection.query(
             `UPDATE pledge_items 
-         SET regional_manager_status = ?, approval_accounts_status = 1
-         WHERE id = ?`,
-            [step2Data.regional_manager_status, pledgeId]
+             SET regional_manager_status = ?, 
+                 regional_status = ?, 
+                 approval_accounts_status = 0,
+                 regional_id = ?,
+                 approval_accounts_id = ?
+             WHERE id = ?`,
+            [
+                step2Data.regional_manager_status,
+                step2Data.regional_status || step2Data.regional_manager_status,
+                uid,
+                execRows2[0]?.id || null,
+                pledgeId
+            ]
         );
 
         if (result.affectedRows === 0) {
             throw new Error(`No pledge found with ID: ${pledgeId}`);
         }
 
+        await connection.commit();
         return await getPledgeById(pledgeId);
 
     } catch (error) {
+        await connection.rollback();
         throw new Error(`Failed to update pledge: ${error.message}`);
     } finally {
         connection.release();
@@ -1087,53 +1184,60 @@ const getAllManagersApprovalPledges = async (page = 1, limit = 10, id) => {
 const getAllOfficePledges = async (page = 1, limit = 10, id) => {
     const connection = await pool.promise().getConnection();
     try {
+        console.log(`Fetching Office Pledges for user ID: ${id}, page: ${page}, limit: ${limit}`);
         page = Number(page) || 1;
         limit = Number(limit) || 10;
         const offset = (page - 1) * limit;
 
         const [[{ total }]] = await connection.query(
-            'SELECT COUNT(*) AS total FROM pledge_items WHERE reference = ?',
-            [id]
+            'SELECT COUNT(*) AS total FROM pledge_items WHERE reference = ? OR money_request_id = ?',
+            [id, id]
         );
-        const [pledges] = await connection.query(
-            'SELECT * FROM pledge_items WHERE reference = ? ORDER BY id DESC LIMIT ? OFFSET ?',
-            [id, limit, offset]
+        console.log(`Total office pledges: ${total}`);
+
+        const [rows] = await connection.query(
+            `SELECT p.*, 
+                    c.id AS customer_db_id, c.customer_name, c.customer_photo, 
+                    u.username as creator_username, u.role as creator_role
+             FROM pledge_items p
+             LEFT JOIN customers c ON c.customer_id = p.customer_id
+             LEFT JOIN users u ON u.id = p.created_user
+             WHERE p.reference = ? OR p.money_request_id = ?
+             ORDER BY p.id DESC 
+             LIMIT ? OFFSET ?`,
+            [id, id, limit, offset]
         );
 
-        const result = [];
-        for (const pledge of pledges) {
-            const [[customer]] = await connection.query(
-                'SELECT * FROM customers WHERE customer_id = ?',
-                [pledge.customer_id]
-            );
-            const [[creator]] = await connection.query(
-                'SELECT * FROM users WHERE id = ?',
-                [pledge.created_user]
-            );
+        const result = rows.map((p) => {
+            const product_details = safeJSONParse(p.product_details) || [];
+            const totalNetWeight = product_details.reduce((sum, item) => sum + (parseFloat(item.net_weight) || 0), 0);
+            const totalAmount = product_details.reduce((sum, item) => sum + (parseFloat(item.amount) || 0), 0);
 
-            const product_details = safeJSONParse(pledge.product_details);
-            const totalNetWeight = parseFloat(
-                product_details.reduce((sum, item) => sum + parseFloat(item.net_weight || 0), 0).toFixed(3)
-            );
-
-            result.push({
-                pledge_id: "#PLEDAM" + pledge.id,
-                ...pledge,
-                weight: totalNetWeight,
+            return {
+                pledge_id: p.pledge_id || `#PLEDAM${p.id}`,
+                ...p,
+                weight: parseFloat(totalNetWeight.toFixed(3)),
+                amount: parseFloat(totalAmount.toFixed(2)),
                 created_user: {
-                    id: pledge.created_user,
-                    username: creator?.username,
-                    role: creator?.role,
+                    id: p.created_user,
+                    username: p.creator_username,
+                    role: p.creator_role,
                 },
-                customer_data: customer,
-                ornament_photo: pledge.ornament_photo ? `/public/uploads/pledge_items/${pledge.ornament_photo}` : null,
-                bill: pledge.bill ? `/public/uploads/pledge_items/${pledge.bill}` : null,
+                customer_data: {
+                    id: p.customer_db_id,
+                    customer_name: p.customer_name,
+                    customer_id: p.customer_id,
+                    ...p
+                },
+                ornament_photo: p.ornament_photo ? `/public/uploads/pledge_items/${p.ornament_photo}` : null,
+                bill: p.bill ? `/public/uploads/pledge_items/${p.bill}` : null,
                 product_details
-            });
-        }
+            };
+        });
 
         return { total, page, limit, totalPages: Math.ceil(total / limit), data: result };
     } catch (error) {
+        console.error("Error in getAllOfficePledges:", error);
         throw error;
     } finally {
         connection.release();
@@ -1535,6 +1639,7 @@ const getAllManagerPledges1 = async (page = 1, limit = 10, id) => {
 const getAllRegionalManagerPledges = async (page = 1, limit = 10, id) => {
     const connection = await pool.promise().getConnection();
     try {
+        console.log(`Fetching RegionalManager Pledges for user ID: ${id}, page: ${page}, limit: ${limit}`);
         page = Number(page) || 1;
         limit = Number(limit) || 10;
         const offset = (page - 1) * limit;
@@ -1543,45 +1648,53 @@ const getAllRegionalManagerPledges = async (page = 1, limit = 10, id) => {
             'SELECT COUNT(*) AS total FROM pledge_items WHERE regional_id = ? AND regional_status = 1',
             [id]
         );
-        const [pledges] = await connection.query(
-            'SELECT * FROM pledge_items WHERE regional_id = ? AND regional_status = 1 ORDER BY id DESC LIMIT ? OFFSET ?',
+        console.log(`Total regional pledges: ${total}`);
+
+        const [rows] = await connection.query(
+            `SELECT p.*, 
+                    c.id AS customer_db_id, c.customer_name, c.customer_photo, c.aadhar_no, c.pan_no, 
+                    c.address_1, c.address_2, c.area, c.city, c.pincode, c.district, c.state, c.phoneno,
+                    u.username as creator_username, u.role as creator_role
+             FROM pledge_items p
+             LEFT JOIN customers c ON c.customer_id = p.customer_id
+             LEFT JOIN users u ON u.id = p.created_user
+             WHERE p.regional_id = ? AND p.regional_status = 1 
+             ORDER BY p.id DESC 
+             LIMIT ? OFFSET ?`,
             [id, limit, offset]
         );
 
-        const result = [];
-        for (const pledge of pledges) {
-            const [[customer]] = await connection.query(
-                'SELECT * FROM customers WHERE customer_id = ?',
-                [pledge.customer_id]
-            );
-            const [[creator]] = await connection.query(
-                'SELECT * FROM users WHERE id = ?',
-                [pledge.created_user]
-            );
+        const result = rows.map((p) => {
+            const product_details = safeJSONParse(p.product_details) || [];
+            const totalNetWeight = product_details.reduce((sum, item) => sum + (parseFloat(item.net_weight) || 0), 0);
+            const totalAmount = product_details.reduce((sum, item) => sum + (parseFloat(item.amount) || 0), 0);
 
-            const product_details = safeJSONParse(pledge.product_details);
-            const totalNetWeight = parseFloat(
-                product_details.reduce((sum, item) => sum + parseFloat(item.net_weight || 0), 0).toFixed(3)
-            );
-
-            result.push({
-                pledge_id: "#PLEDAM" + pledge.id,
-                ...pledge,
-                weight: totalNetWeight,
+            return {
+                pledge_id: p.pledge_id || `#PLEDAM${p.id}`,
+                ...p,
+                weight: parseFloat(totalNetWeight.toFixed(3)),
+                amount: parseFloat(totalAmount.toFixed(2)),
                 created_user: {
-                    id: pledge.created_user,
-                    username: creator?.username,
-                    role: creator?.role,
+                    id: p.created_user,
+                    username: p.creator_username,
+                    role: p.creator_role,
                 },
-                customer_data: customer,
-                ornament_photo: pledge.ornament_photo ? `/public/uploads/pledge_items/${pledge.ornament_photo}` : null,
-                bill: pledge.bill ? `/public/uploads/pledge_items/${pledge.bill}` : null,
+                customer_data: {
+                    id: p.customer_db_id,
+                    customer_name: p.customer_name,
+                    customer_id: p.customer_id,
+                    phoneno: p.phoneno,
+                    ...p // Include other flat fields if needed
+                },
+                ornament_photo: p.ornament_photo ? `/public/uploads/pledge_items/${p.ornament_photo}` : null,
+                bill: p.bill ? `/public/uploads/pledge_items/${p.bill}` : null,
                 product_details
-            });
-        }
+            };
+        });
 
         return { total, page, limit, totalPages: Math.ceil(total / limit), data: result };
     } catch (error) {
+        console.error("Error in getAllRegionalManagerPledges:", error);
         throw error;
     } finally {
         connection.release();
@@ -1591,49 +1704,66 @@ const getAllRegionalManagerPledges = async (page = 1, limit = 10, id) => {
 const getAllAccountsApprovalPledges = async (page = 1, limit = 10, id) => {
     const connection = await pool.promise().getConnection();
     try {
+        console.log(`Fetching AccountsApproval Pledges for user ID: ${id}, page: ${page}, limit: ${limit}`);
         page = Number(page) || 1;
         limit = Number(limit) || 10;
         const offset = (page - 1) * limit;
+
         const [[{ total }]] = await connection.query(
             'SELECT COUNT(*) AS total FROM pledge_items WHERE (approval_accounts_id = ? OR regional_id = ?) AND regional_status = 1',
             [id, id]
         );
-        const [pledges] = await connection.query(
-            'SELECT * FROM pledge_items WHERE (approval_accounts_id = ? OR regional_id = ?) AND regional_status = 1 ORDER BY id DESC LIMIT ? OFFSET ?',
+        console.log(`Total accounts approval pledges: ${total}`);
+
+        const [rows] = await connection.query(
+            `SELECT p.*, 
+                    c.id AS customer_db_id, c.customer_name, c.customer_photo, c.aadhar_no, c.pan_no, 
+                    c.address_1, c.address_2, c.area, c.city, c.pincode, c.district, c.state, c.phoneno,
+                    u.username as creator_username, u.role as creator_role
+             FROM pledge_items p
+             LEFT JOIN customers c ON c.customer_id = p.customer_id
+             LEFT JOIN users u ON u.id = p.created_user
+             WHERE (p.approval_accounts_id = ? OR p.regional_id = ?) AND p.regional_status = 1 
+             ORDER BY p.id DESC 
+             LIMIT ? OFFSET ?`,
             [id, id, limit, offset]
         );
-        const result = [];
-        for (const pledge of pledges) {
-            const [[customer]] = await connection.query(
-                'SELECT * FROM customers WHERE customer_id = ?',
-                [pledge.customer_id]
-            );
-            const [[creator]] = await connection.query(
-                'SELECT * FROM users WHERE id = ?',
-                [pledge.created_user]
-            );
-            const product_details = safeJSONParse(pledge.product_details);
 
-            const totalNetWeight = parseFloat(
-                product_details.reduce((sum, item) => sum + parseFloat(item.net_weight || 0), 0).toFixed(3)
-            );
-            result.push({
-                pledge_id: "#PLEDAM" + pledge.id,
-                ...pledge,
-                weight: totalNetWeight,
+        const result = rows.map((p) => {
+            const product_details = safeJSONParse(p.product_details) || [];
+            const totalNetWeight = product_details.reduce((sum, item) => sum + (parseFloat(item.net_weight) || 0), 0);
+            const totalAmount = product_details.reduce((sum, item) => sum + (parseFloat(item.amount) || 0), 0);
+
+            return {
+                pledge_id: p.pledge_id || `#PLEDAM${p.id}`,
+                ...p,
+                weight: parseFloat(totalNetWeight.toFixed(3)),
+                amount: parseFloat(totalAmount.toFixed(2)),
                 created_user: {
-                    id: pledge.created_user,
-                    username: creator?.username,
-                    role: creator?.role,
+                    id: p.created_user,
+                    username: p.creator_username,
+                    role: p.creator_role,
                 },
-                customer_data: customer,
-                ornament_photo: pledge.ornament_photo ? `/public/uploads/pledge_items/${pledge.ornament_photo}` : null,
-                bill: pledge.bill ? `/public/uploads/pledge_items/${pledge.bill}` : null,
+                customer_data: {
+                    id: p.customer_db_id,
+                    customer_name: p.customer_name,
+                    customer_id: p.customer_id,
+                    phoneno: p.phoneno,
+                    ...p
+                },
+                ornament_photo: p.ornament_photo ? `/public/uploads/pledge_items/${p.ornament_photo}` : null,
+                bill: p.bill ? `/public/uploads/pledge_items/${p.bill}` : null,
                 product_details
-            });
+            };
+        });
+
+        if (result.length > 0) {
+            console.log("Sample outcome (first pledge):", JSON.stringify(result[0], null, 2));
         }
+
         return { total, page, limit, totalPages: Math.ceil(total / limit), data: result };
     } catch (error) {
+        console.error("Error in getAllAccountsApprovalPledges:", error);
         throw error;
     } finally {
         connection.release();

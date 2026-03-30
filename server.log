@@ -1,0 +1,5239 @@
+
+> AmmaiyaGold@1.0.0 start
+> nodemon app.js
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/41
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+GET 304 http://localhost:5000/api/pledge-item/manager_first/1/10/41
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+{
+  id: 39,
+  username: 'balamurugan.g',
+  email: 'balag851997@gmail.com',
+  role: '7',
+  branch_id: 5,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiI3IiwiaWF0IjoxNzc0ODgxNjU0LCJleHAiOjE3NzQ5NjgwNTR9.j5lNEjOX60B7sUddY7TBmI3cdqAKToOwhj0g3nHhDjg'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total count found: 27
+Pledges found: 10
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total count found: 27
+Pledges found: 10
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 27
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM35",
+  "id": 35,
+  "customer_id": "H82",
+  "adhar_number": "585563181236",
+  "pan_number": "undefined",
+  "phone_number": "9943855688",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-27T10:23:26.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": "1",
+  "collection_id": "33",
+  "collection_type": "1",
+  "bank_collection_id": "38",
+  "bank_collection_status": "1",
+  "bank_collection_lat": "9.8841822",
+  "bank_collection_lng": "78.2362225",
+  "finance_id": "38",
+  "finance_status": "1",
+  "finance_lat": "9.8841822",
+  "finance_lng": "78.2362225",
+  "gold_collect_id": "38",
+  "gold_collect_status": "1",
+  "gold_collect_lat": "9.8841822",
+  "gold_collect_lng": "78.2362225",
+  "manager_approvel_id": "33",
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": null,
+  "manage_approval_status": "1",
+  "accounts_amount": "1000",
+  "customer_db_id": 91,
+  "customer_name": "Hemalatha",
+  "customer_photo": "/uploads/customers/91/customer-1768808065778-customer-capture.jpg",
+  "aadhar_no": "585563181236",
+  "pan_no": "undefined",
+  "address_1": "50/17",
+  "address_2": null,
+  "area": "kunamkulam",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9943855688",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 35,
+    "customer_name": "Hemalatha",
+    "customer_id": "H82",
+    "phoneno": "9943855688",
+    "adhar_number": "585563181236",
+    "pan_number": "undefined",
+    "phone_number": "9943855688",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-27T10:23:26.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": "1",
+    "collection_id": "33",
+    "collection_type": "1",
+    "bank_collection_id": "38",
+    "bank_collection_status": "1",
+    "bank_collection_lat": "9.8841822",
+    "bank_collection_lng": "78.2362225",
+    "finance_id": "38",
+    "finance_status": "1",
+    "finance_lat": "9.8841822",
+    "finance_lng": "78.2362225",
+    "gold_collect_id": "38",
+    "gold_collect_status": "1",
+    "gold_collect_lat": "9.8841822",
+    "gold_collect_lng": "78.2362225",
+    "manager_approvel_id": "33",
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": null,
+    "manage_approval_status": "1",
+    "accounts_amount": "1000",
+    "customer_db_id": 91,
+    "customer_photo": "/uploads/customers/91/customer-1768808065778-customer-capture.jpg",
+    "aadhar_no": "585563181236",
+    "pan_no": "undefined",
+    "address_1": "50/17",
+    "address_2": null,
+    "area": "kunamkulam",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODgxOTg2LCJleHAiOjE3NzQ5NjgzODZ9.iNMOPWfvGAOpQ7suI_TL7R0FEvKAbMOMsX0EkFWl9Hk'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 304 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_regional/36
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+{
+  id: 39,
+  username: 'balamurugan.g',
+  email: 'balag851997@gmail.com',
+  role: '7',
+  branch_id: 5,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiI3IiwiaWF0IjoxNzc0ODgyMTE3LCJleHAiOjE3NzQ5Njg1MTd9.mvaLLjUCT1tvrA7vT_GThrjswjxLLNNvIynIZCA9YXo'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 28
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM36",
+  "id": 36,
+  "customer_id": "JA.A81",
+  "adhar_number": "367551419356",
+  "pan_number": "undefined",
+  "phone_number": "9080040002",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:19:28.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 96,
+  "customer_name": "jessila angeline . A",
+  "customer_photo": null,
+  "aadhar_no": "367551419356",
+  "pan_no": "undefined",
+  "address_1": "5-2",
+  "address_2": null,
+  "area": "thirummakulam",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9080040002",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 36,
+    "customer_name": "jessila angeline . A",
+    "customer_id": "JA.A81",
+    "phoneno": "9080040002",
+    "adhar_number": "367551419356",
+    "pan_number": "undefined",
+    "phone_number": "9080040002",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:19:28.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 96,
+    "customer_photo": null,
+    "aadhar_no": "367551419356",
+    "pan_no": "undefined",
+    "address_1": "5-2",
+    "address_2": null,
+    "area": "thirummakulam",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 28
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM36",
+  "id": 36,
+  "customer_id": "JA.A81",
+  "adhar_number": "367551419356",
+  "pan_number": "undefined",
+  "phone_number": "9080040002",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:19:28.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 96,
+  "customer_name": "jessila angeline . A",
+  "customer_photo": null,
+  "aadhar_no": "367551419356",
+  "pan_no": "undefined",
+  "address_1": "5-2",
+  "address_2": null,
+  "area": "thirummakulam",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9080040002",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 36,
+    "customer_name": "jessila angeline . A",
+    "customer_id": "JA.A81",
+    "phoneno": "9080040002",
+    "adhar_number": "367551419356",
+    "pan_number": "undefined",
+    "phone_number": "9080040002",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:19:28.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 96,
+    "customer_photo": null,
+    "aadhar_no": "367551419356",
+    "pan_no": "undefined",
+    "address_1": "5-2",
+    "address_2": null,
+    "area": "thirummakulam",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+Total accounts approval pledges: 28
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM36",
+  "id": 36,
+  "customer_id": "JA.A81",
+  "adhar_number": "367551419356",
+  "pan_number": "undefined",
+  "phone_number": "9080040002",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:19:28.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 96,
+  "customer_name": "jessila angeline . A",
+  "customer_photo": null,
+  "aadhar_no": "367551419356",
+  "pan_no": "undefined",
+  "address_1": "5-2",
+  "address_2": null,
+  "area": "thirummakulam",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9080040002",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 36,
+    "customer_name": "jessila angeline . A",
+    "customer_id": "JA.A81",
+    "phoneno": "9080040002",
+    "adhar_number": "367551419356",
+    "pan_number": "undefined",
+    "phone_number": "9080040002",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:19:28.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 96,
+    "customer_photo": null,
+    "aadhar_no": "367551419356",
+    "pan_no": "undefined",
+    "address_1": "5-2",
+    "address_2": null,
+    "area": "thirummakulam",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 28
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM36",
+  "id": 36,
+  "customer_id": "JA.A81",
+  "adhar_number": "367551419356",
+  "pan_number": "undefined",
+  "phone_number": "9080040002",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:19:28.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 96,
+  "customer_name": "jessila angeline . A",
+  "customer_photo": null,
+  "aadhar_no": "367551419356",
+  "pan_no": "undefined",
+  "address_1": "5-2",
+  "address_2": null,
+  "area": "thirummakulam",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9080040002",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 36,
+    "customer_name": "jessila angeline . A",
+    "customer_id": "JA.A81",
+    "phoneno": "9080040002",
+    "adhar_number": "367551419356",
+    "pan_number": "undefined",
+    "phone_number": "9080040002",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:19:28.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 96,
+    "customer_photo": null,
+    "aadhar_no": "367551419356",
+    "pan_no": "undefined",
+    "address_1": "5-2",
+    "address_2": null,
+    "area": "thirummakulam",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+{
+  id: 31,
+  username: 'mariya.j',
+  email: 'KAJOJOVIN@GMAIL.COM',
+  role: '5',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzEsInJvbGUiOiI1IiwiaWF0IjoxNzc0ODgyNDE4LCJleHAiOjE3NzQ5Njg4MTh9.sKmn009ztg9vupcqQWvGhAOTDwLPzE94jaD3B3GYHbw'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/5
+GET 304 http://localhost:5000/api/role-permissions/by-role/5
+GET 304 http://localhost:5000/api/role-permissions/by-role/5
+GET 400 http://localhost:5000/api/pledge-item/manager
+GET 304 http://localhost:5000/api/quotations/mcx-rates
+GET 304 http://localhost:5000/api/customers/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/no-limit
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/customers/?page=1&limit=10
+GET 400 http://localhost:5000/api/pledge-item/manager
+GET 304 http://localhost:5000/api/products/no-limit
+GET 304 http://localhost:5000/api/quotations/mcx-rates
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 200 http://localhost:5000/api/pledge-item/1/10/31
+GET 304 http://localhost:5000/api/pledge-item/1/10/31
+GET 304 http://localhost:5000/api/sub-products/no-limit
+POST 201 http://localhost:5000/api/pledge-item/
+PUT 200 http://localhost:5000/api/pledge-item/37
+GET 200 http://localhost:5000/api/pledge-item/1/10/31
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODgyNDk2LCJleHAiOjE3NzQ5Njg4OTZ9.lv2plhr_A6zOiE0-wD8yMpwUTRL7pIMRze1dJZB7anA'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_regional/37
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+{
+  id: 39,
+  username: 'balamurugan.g',
+  email: 'balag851997@gmail.com',
+  role: '7',
+  branch_id: 5,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiI3IiwiaWF0IjoxNzc0ODgyNTIwLCJleHAiOjE3NzQ5Njg5MjB9.xqQhiuTh-uaCXa1q7rPzHjIR8KOSt1Eci8HR5cBe0fc'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 29
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM37",
+  "id": 37,
+  "customer_id": "S44",
+  "adhar_number": "730747359383",
+  "pan_number": "undefined",
+  "phone_number": "9952211441",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:54:43.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "0",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 95,
+  "customer_name": "S.KARUPPASAMY",
+  "customer_photo": null,
+  "aadhar_no": "730747359383",
+  "pan_no": "undefined",
+  "address_1": "2/129,RENGASAMUTHIRAPATTI",
+  "address_2": "KAKKIVADANPATTI",
+  "area": "MAMSAPURAM",
+  "city": "sivakasi",
+  "pincode": "626124",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9952211441",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 37,
+    "customer_name": "S.KARUPPASAMY",
+    "customer_id": "S44",
+    "phoneno": "9952211441",
+    "adhar_number": "730747359383",
+    "pan_number": "undefined",
+    "phone_number": "9952211441",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:54:43.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "0",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 95,
+    "customer_photo": null,
+    "aadhar_no": "730747359383",
+    "pan_no": "undefined",
+    "address_1": "2/129,RENGASAMUTHIRAPATTI",
+    "address_2": "KAKKIVADANPATTI",
+    "area": "MAMSAPURAM",
+    "city": "sivakasi",
+    "pincode": "626124",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 29
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM37",
+  "id": 37,
+  "customer_id": "S44",
+  "adhar_number": "730747359383",
+  "pan_number": "undefined",
+  "phone_number": "9952211441",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:54:43.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "0",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 95,
+  "customer_name": "S.KARUPPASAMY",
+  "customer_photo": null,
+  "aadhar_no": "730747359383",
+  "pan_no": "undefined",
+  "address_1": "2/129,RENGASAMUTHIRAPATTI",
+  "address_2": "KAKKIVADANPATTI",
+  "area": "MAMSAPURAM",
+  "city": "sivakasi",
+  "pincode": "626124",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9952211441",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 37,
+    "customer_name": "S.KARUPPASAMY",
+    "customer_id": "S44",
+    "phoneno": "9952211441",
+    "adhar_number": "730747359383",
+    "pan_number": "undefined",
+    "phone_number": "9952211441",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:54:43.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "0",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 95,
+    "customer_photo": null,
+    "aadhar_no": "730747359383",
+    "pan_no": "undefined",
+    "address_1": "2/129,RENGASAMUTHIRAPATTI",
+    "address_2": "KAKKIVADANPATTI",
+    "area": "MAMSAPURAM",
+    "city": "sivakasi",
+    "pincode": "626124",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+PUT 200 http://localhost:5000/api/pledge-item/accounts_approval/37
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 29
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM37",
+  "id": 37,
+  "customer_id": "S44",
+  "adhar_number": "730747359383",
+  "pan_number": "undefined",
+  "phone_number": "9952211441",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:54:43.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 95,
+  "customer_name": "S.KARUPPASAMY",
+  "customer_photo": null,
+  "aadhar_no": "730747359383",
+  "pan_no": "undefined",
+  "address_1": "2/129,RENGASAMUTHIRAPATTI",
+  "address_2": "KAKKIVADANPATTI",
+  "area": "MAMSAPURAM",
+  "city": "sivakasi",
+  "pincode": "626124",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9952211441",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 37,
+    "customer_name": "S.KARUPPASAMY",
+    "customer_id": "S44",
+    "phoneno": "9952211441",
+    "adhar_number": "730747359383",
+    "pan_number": "undefined",
+    "phone_number": "9952211441",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:54:43.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 95,
+    "customer_photo": null,
+    "aadhar_no": "730747359383",
+    "pan_no": "undefined",
+    "address_1": "2/129,RENGASAMUTHIRAPATTI",
+    "address_2": "KAKKIVADANPATTI",
+    "area": "MAMSAPURAM",
+    "city": "sivakasi",
+    "pincode": "626124",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODgyNTk5LCJleHAiOjE3NzQ5Njg5OTl9.ViTbZxHYPR53rH9u6vZ7oybg11z1VodXYdgMehLfGu8'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_sales_executive/37
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+{
+  id: 38,
+  username: 'muthu.karuppasamy',
+  email: '1234@GMAIL.COM',
+  role: '1',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsInJvbGUiOiIxIiwiaWF0IjoxNzc0ODgyNjQyLCJleHAiOjE3NzQ5NjkwNDJ9.YTwNyRa7xnuE_3Jl_jItQ_uWnknMATPyoHlns0R-9Vo'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 201 http://localhost:5000/api/pledge-item/executive/38
+PUT 200 http://localhost:5000/api/pledge-item/status/37
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/38
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODgyNzQxLCJleHAiOjE3NzQ5NjkxNDF9.xaxoNqYYNzBbKCdHLyD4-0xiwekj07gMVtF8vu0W4-Y'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Total accounts approval pledges: 29
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM37",
+  "id": 37,
+  "customer_id": "S44",
+  "adhar_number": "730747359383",
+  "pan_number": "undefined",
+  "phone_number": "9952211441",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:54:43.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 95,
+  "customer_name": "S.KARUPPASAMY",
+  "customer_photo": null,
+  "aadhar_no": "730747359383",
+  "pan_no": "undefined",
+  "address_1": "2/129,RENGASAMUTHIRAPATTI",
+  "address_2": "KAKKIVADANPATTI",
+  "area": "MAMSAPURAM",
+  "city": "sivakasi",
+  "pincode": "626124",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9952211441",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 37,
+    "customer_name": "S.KARUPPASAMY",
+    "customer_id": "S44",
+    "phoneno": "9952211441",
+    "adhar_number": "730747359383",
+    "pan_number": "undefined",
+    "phone_number": "9952211441",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:54:43.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 95,
+    "customer_photo": null,
+    "aadhar_no": "730747359383",
+    "pan_no": "undefined",
+    "address_1": "2/129,RENGASAMUTHIRAPATTI",
+    "address_2": "KAKKIVADANPATTI",
+    "area": "MAMSAPURAM",
+    "city": "sivakasi",
+    "pincode": "626124",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+Total accounts approval pledges: 29
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM37",
+  "id": 37,
+  "customer_id": "S44",
+  "adhar_number": "730747359383",
+  "pan_number": "undefined",
+  "phone_number": "9952211441",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Plain Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T14:54:43.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 95,
+  "customer_name": "S.KARUPPASAMY",
+  "customer_photo": null,
+  "aadhar_no": "730747359383",
+  "pan_no": "undefined",
+  "address_1": "2/129,RENGASAMUTHIRAPATTI",
+  "address_2": "KAKKIVADANPATTI",
+  "area": "MAMSAPURAM",
+  "city": "sivakasi",
+  "pincode": "626124",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9952211441",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 37,
+    "customer_name": "S.KARUPPASAMY",
+    "customer_id": "S44",
+    "phoneno": "9952211441",
+    "adhar_number": "730747359383",
+    "pan_number": "undefined",
+    "phone_number": "9952211441",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Plain Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T14:54:43.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 95,
+    "customer_photo": null,
+    "aadhar_no": "730747359383",
+    "pan_no": "undefined",
+    "address_1": "2/129,RENGASAMUTHIRAPATTI",
+    "address_2": "KAKKIVADANPATTI",
+    "area": "MAMSAPURAM",
+    "city": "sivakasi",
+    "pincode": "626124",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 31,
+  username: 'mariya.j',
+  email: 'KAJOJOVIN@GMAIL.COM',
+  role: '5',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzEsInJvbGUiOiI1IiwiaWF0IjoxNzc0ODgyODA4LCJleHAiOjE3NzQ5NjkyMDh9.2Iafl76XCeo4PaO4jYewo41a3hnPFFMmG4QrGnAsNas'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/5
+GET 304 http://localhost:5000/api/role-permissions/by-role/5
+GET 304 http://localhost:5000/api/role-permissions/by-role/5
+GET 400 http://localhost:5000/api/pledge-item/manager
+GET 304 http://localhost:5000/api/quotations/mcx-rates
+GET 304 http://localhost:5000/api/customers/?page=1&limit=10
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 400 http://localhost:5000/api/pledge-item/manager
+GET 304 http://localhost:5000/api/products/no-limit
+GET 304 http://localhost:5000/api/quotations/mcx-rates
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/customers/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/no-limit
+GET 200 http://localhost:5000/api/pledge-item/1/10/31
+GET 304 http://localhost:5000/api/pledge-item/1/10/31
+GET 304 http://localhost:5000/api/sub-products/no-limit
+POST 201 http://localhost:5000/api/pledge-item/
+PUT 200 http://localhost:5000/api/pledge-item/38
+GET 200 http://localhost:5000/api/pledge-item/1/10/31
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODgyODgwLCJleHAiOjE3NzQ5NjkyODB9.eY3GMvpPBLHMwB-Wp2N966w1JipBbZJJO5TQraRi7fI'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_regional/38
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+{
+  id: 39,
+  username: 'balamurugan.g',
+  email: 'balag851997@gmail.com',
+  role: '7',
+  branch_id: 5,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiI3IiwiaWF0IjoxNzc0ODgyOTA3LCJleHAiOjE3NzQ5NjkzMDd9.aQlbSwpLYmaan0keaX3jA39C28x0s9DS3c4m_qcGTXs'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Total accounts approval pledges: 30
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM38",
+  "id": 38,
+  "customer_id": "R40",
+  "adhar_number": "365446035983",
+  "pan_number": "undefined",
+  "phone_number": "8248914237",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 3,
+      "sub_product": "Gents Ring",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:01:07.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "600000",
+  "current_interest": "undefined",
+  "total_payment": "700000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "0",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 93,
+  "customer_name": "RAMACHANDRAN",
+  "customer_photo": null,
+  "aadhar_no": "365446035983",
+  "pan_no": "undefined",
+  "address_1": "A A 1",
+  "address_2": null,
+  "area": "DHUDIYANDIAMMAN KOVIL STREET",
+  "city": "SRIVILLIPUTTUR",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "8248914237",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 38,
+    "customer_name": "RAMACHANDRAN",
+    "customer_id": "R40",
+    "phoneno": "8248914237",
+    "adhar_number": "365446035983",
+    "pan_number": "undefined",
+    "phone_number": "8248914237",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":3,\"sub_product\":\"Gents Ring\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:01:07.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "600000",
+    "current_interest": "undefined",
+    "total_payment": "700000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "0",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 93,
+    "customer_photo": null,
+    "aadhar_no": "365446035983",
+    "pan_no": "undefined",
+    "address_1": "A A 1",
+    "address_2": null,
+    "area": "DHUDIYANDIAMMAN KOVIL STREET",
+    "city": "SRIVILLIPUTTUR",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 30
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM38",
+  "id": 38,
+  "customer_id": "R40",
+  "adhar_number": "365446035983",
+  "pan_number": "undefined",
+  "phone_number": "8248914237",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 3,
+      "sub_product": "Gents Ring",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:01:07.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "600000",
+  "current_interest": "undefined",
+  "total_payment": "700000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "0",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 93,
+  "customer_name": "RAMACHANDRAN",
+  "customer_photo": null,
+  "aadhar_no": "365446035983",
+  "pan_no": "undefined",
+  "address_1": "A A 1",
+  "address_2": null,
+  "area": "DHUDIYANDIAMMAN KOVIL STREET",
+  "city": "SRIVILLIPUTTUR",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "8248914237",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 38,
+    "customer_name": "RAMACHANDRAN",
+    "customer_id": "R40",
+    "phoneno": "8248914237",
+    "adhar_number": "365446035983",
+    "pan_number": "undefined",
+    "phone_number": "8248914237",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":3,\"sub_product\":\"Gents Ring\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:01:07.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "600000",
+    "current_interest": "undefined",
+    "total_payment": "700000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "0",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 93,
+    "customer_photo": null,
+    "aadhar_no": "365446035983",
+    "pan_no": "undefined",
+    "address_1": "A A 1",
+    "address_2": null,
+    "area": "DHUDIYANDIAMMAN KOVIL STREET",
+    "city": "SRIVILLIPUTTUR",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+PUT 200 http://localhost:5000/api/pledge-item/accounts_approval/38
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 30
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM38",
+  "id": 38,
+  "customer_id": "R40",
+  "adhar_number": "365446035983",
+  "pan_number": "undefined",
+  "phone_number": "8248914237",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 3,
+      "sub_product": "Gents Ring",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:01:07.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "600000",
+  "current_interest": "undefined",
+  "total_payment": "700000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "2",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 93,
+  "customer_name": "RAMACHANDRAN",
+  "customer_photo": null,
+  "aadhar_no": "365446035983",
+  "pan_no": "undefined",
+  "address_1": "A A 1",
+  "address_2": null,
+  "area": "DHUDIYANDIAMMAN KOVIL STREET",
+  "city": "SRIVILLIPUTTUR",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "8248914237",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 38,
+    "customer_name": "RAMACHANDRAN",
+    "customer_id": "R40",
+    "phoneno": "8248914237",
+    "adhar_number": "365446035983",
+    "pan_number": "undefined",
+    "phone_number": "8248914237",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":3,\"sub_product\":\"Gents Ring\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:01:07.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "600000",
+    "current_interest": "undefined",
+    "total_payment": "700000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "2",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 93,
+    "customer_photo": null,
+    "aadhar_no": "365446035983",
+    "pan_no": "undefined",
+    "address_1": "A A 1",
+    "address_2": null,
+    "area": "DHUDIYANDIAMMAN KOVIL STREET",
+    "city": "SRIVILLIPUTTUR",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+PUT 200 http://localhost:5000/api/pledge-item/accounts_approval/38
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 30
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM38",
+  "id": 38,
+  "customer_id": "R40",
+  "adhar_number": "365446035983",
+  "pan_number": "undefined",
+  "phone_number": "8248914237",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 3,
+      "sub_product": "Gents Ring",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:01:07.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "600000",
+  "current_interest": "undefined",
+  "total_payment": "700000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 93,
+  "customer_name": "RAMACHANDRAN",
+  "customer_photo": null,
+  "aadhar_no": "365446035983",
+  "pan_no": "undefined",
+  "address_1": "A A 1",
+  "address_2": null,
+  "area": "DHUDIYANDIAMMAN KOVIL STREET",
+  "city": "SRIVILLIPUTTUR",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "8248914237",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 38,
+    "customer_name": "RAMACHANDRAN",
+    "customer_id": "R40",
+    "phoneno": "8248914237",
+    "adhar_number": "365446035983",
+    "pan_number": "undefined",
+    "phone_number": "8248914237",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":3,\"sub_product\":\"Gents Ring\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:01:07.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "600000",
+    "current_interest": "undefined",
+    "total_payment": "700000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 93,
+    "customer_photo": null,
+    "aadhar_no": "365446035983",
+    "pan_no": "undefined",
+    "address_1": "A A 1",
+    "address_2": null,
+    "area": "DHUDIYANDIAMMAN KOVIL STREET",
+    "city": "SRIVILLIPUTTUR",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODgyOTM3LCJleHAiOjE3NzQ5NjkzMzd9.9LibLl_Irygws8JmfWalEWOzEIIdVRqNq7-c9fqoMy4'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_sales_executive/38
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+{
+  id: 38,
+  username: 'muthu.karuppasamy',
+  email: '1234@GMAIL.COM',
+  role: '1',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsInJvbGUiOiIxIiwiaWF0IjoxNzc0ODgyOTY3LCJleHAiOjE3NzQ5NjkzNjd9.Dxzi0UqzP9MhGjRHkjUaE1HjaXA7D-UO2Xraft8zhHc'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 201 http://localhost:5000/api/pledge-item/executive/38
+PUT 200 http://localhost:5000/api/pledge-item/status/38
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/38
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODgzMDQ3LCJleHAiOjE3NzQ5Njk0NDd9.osVltWuV38OJYwWrzvmX93DXVkxHwYnoBaio-UozeLs'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 1,
+  username: 'superadmin',
+  email: 'superadmin@gmail.com',
+  role: '4',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IjQiLCJpYXQiOjE3NzQ4ODMwNzgsImV4cCI6MTc3NDk2OTQ3OH0.J_FwPcMWqMIgJ2KWAqU-8X6hkHJVQKeaPGJIn0Ewrco'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODgzMTQwLCJleHAiOjE3NzQ5Njk1NDB9.PCdA64G37DO1HOtqWs1GrXffxFDdstAx78y7RBUcvEk'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 200 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+PUT 200 http://localhost:5000/api/pledge-item/money_request/38
+GET 200 http://localhost:5000/api/pledge-item/money_request/1/10/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODgzMjk3LCJleHAiOjE3NzQ5Njk2OTd9.HP5rgHo33lS8rvNPwo4EcWtCaaovkAdJZZ6GTH28clo'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODgzMzgyLCJleHAiOjE3NzQ5Njk3ODJ9.vbT1HwT8GDsPKJ0e2n4orPrr8ZNAnIdoyIIKKwLxYUs'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+GET 200 http://localhost:5000/api/companies/?page[page]=1&page[limit]=10&page[search]=&page[state]=&page[turnover]=&limit=10
+GET 304 http://localhost:5000/api/companies/?page[page]=1&page[limit]=10&page[search]=&page[state]=&page[turnover]=&limit=10
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 25
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 25
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 31,
+  username: 'mariya.j',
+  email: 'KAJOJOVIN@GMAIL.COM',
+  role: '5',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzEsInJvbGUiOiI1IiwiaWF0IjoxNzc0ODgzOTk2LCJleHAiOjE3NzQ5NzAzOTZ9.aL8gd506vNNXZnzHk_f3za-lc8CSBc8ObcwbcRiUYbc'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/5
+GET 304 http://localhost:5000/api/role-permissions/by-role/5
+GET 304 http://localhost:5000/api/role-permissions/by-role/5
+GET 304 http://localhost:5000/api/quotations/mcx-rates
+GET 304 http://localhost:5000/api/customers/?page=1&limit=10
+GET 400 http://localhost:5000/api/pledge-item/manager
+GET 304 http://localhost:5000/api/customers/?page=1&limit=10
+GET 304 http://localhost:5000/api/quotations/mcx-rates
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/no-limit
+GET 400 http://localhost:5000/api/pledge-item/manager
+GET 200 http://localhost:5000/api/pledge-item/1/10/31
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/no-limit
+GET 304 http://localhost:5000/api/pledge-item/1/10/31
+GET 304 http://localhost:5000/api/sub-products/no-limit
+POST 201 http://localhost:5000/api/pledge-item/
+PUT 200 http://localhost:5000/api/pledge-item/39
+GET 200 http://localhost:5000/api/pledge-item/1/10/31
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg0MDYzLCJleHAiOjE3NzQ5NzA0NjN9.BtIYuyWm3K8JcuPeE5AUzgThqjjCwcFEpWURIiqkIHM'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_regional/39
+GET 200 http://localhost:5000/api/pledge-item/manager_first/1/10/33
+{
+  id: 39,
+  username: 'balamurugan.g',
+  email: 'balag851997@gmail.com',
+  role: '7',
+  branch_id: 5,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiI3IiwiaWF0IjoxNzc0ODg0MDk4LCJleHAiOjE3NzQ5NzA0OTh9.7q4DuB6B3UwNhK5N04I5khnjXb8F4OliMbsoyatUtzU'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "0",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "0",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "0",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "0",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+PUT 200 http://localhost:5000/api/pledge-item/accounts_approval/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "2",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "2",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+PUT 200 http://localhost:5000/api/pledge-item/accounts_approval/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": null,
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": null,
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": null,
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": null,
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": null,
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": null,
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg0MTI1LCJleHAiOjE3NzQ5NzA1MjV9.5-JyjWZdPG6ijxDKQ70BWYm9tnp7aouTXGDI61hnLO4'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/manager/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+PUT 200 http://localhost:5000/api/pledge-item/assign_sales_executive/39
+GET 200 http://localhost:5000/api/pledge-item/manager/1/10/33
+{
+  id: 38,
+  username: 'muthu.karuppasamy',
+  email: '1234@GMAIL.COM',
+  role: '1',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsInJvbGUiOiIxIiwiaWF0IjoxNzc0ODg0MTU0LCJleHAiOjE3NzQ5NzA1NTR9.fQ5SSEA6HcO3jpC--rrdcvi94-7HSTArMdeeeGlnHE0'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/38
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+GET 201 http://localhost:5000/api/pledge-item/executive/38
+PUT 200 http://localhost:5000/api/pledge-item/status/39
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/38
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg0MTk1LCJleHAiOjE3NzQ5NzA1OTV9.Yhe-QRSEoedVNTkSY0N-ppU6YlRRpzuQkDLG81oCjs0'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 200 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/companies
+GET 304 http://localhost:5000/api/branches/?page=1&limit=10
+GET 304 http://localhost:5000/api/companies
+GET 304 http://localhost:5000/api/branches/?page=1&limit=10
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 2, limit: 10
+Total office pledges: 26
+GET 200 http://localhost:5000/api/pledge-item/executive/2/10/41
+Fetching Office Pledges for user ID: 41, page: 3, limit: 10
+Total office pledges: 26
+GET 200 http://localhost:5000/api/pledge-item/executive/3/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg0NDc0LCJleHAiOjE3NzQ5NzA4NzR9.cgr0eGHt5uT7dMC1CC84GNR0k-yTKbfT4NGt6IM5cuk'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 200 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg0NTA3LCJleHAiOjE3NzQ5NzA5MDd9.mPo6J_KeatT9iokYjBlAs03nTbzbvwkiBNBOMMgB1u8'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+PUT 200 http://localhost:5000/api/pledge-item/status/39
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 38,
+  username: 'muthu.karuppasamy',
+  email: '1234@GMAIL.COM',
+  role: '1',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsInJvbGUiOiIxIiwiaWF0IjoxNzc0ODg0NjQyLCJleHAiOjE3NzQ5NzEwNDJ9.hJOh9WsXLOJlyXZXb6qN0V0NjuCWk5oTu6wQGpT3XKI'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+{
+  id: 1,
+  username: 'superadmin',
+  email: 'superadmin@gmail.com',
+  role: '4',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IjQiLCJpYXQiOjE3NzQ4ODQ2NjcsImV4cCI6MTc3NDk3MTA2N30.EQgOOYY2CTnO7atmYReFuWQ1Dh8_xLDb1QcXqhEjr1o'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg0NzE2LCJleHAiOjE3NzQ5NzExMTZ9.e9usvyAcbTgQvJt2OF2e0HMUUPl5jdnYcbozRpPsbgE'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+Total accounts approval pledges: 31
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+Total accounts approval pledges: 31
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 1,
+  username: 'superadmin',
+  email: 'superadmin@gmail.com',
+  role: '4',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IjQiLCJpYXQiOjE3NzQ4ODYzMjgsImV4cCI6MTc3NDk3MjcyOH0.vDwi9HLjKajE1a5WN5HsECUwT249ge_E18oHVViaH8Q'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg2Mzc4LCJleHAiOjE3NzQ5NzI3Nzh9.Xn2JSsou5zFea-lZKwTx-lIscGXCtGssorFQYDFn2_U'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+{
+  id: 1,
+  username: 'superadmin',
+  email: 'superadmin@gmail.com',
+  role: '4',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IjQiLCJpYXQiOjE3NzQ4ODY0MTYsImV4cCI6MTc3NDk3MjgxNn0.pmfl9DHfec4GeSlRoN18VfdwyhHw2chK3wohYhgnhuE'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg2NTczLCJleHAiOjE3NzQ5NzI5NzN9.SaYZd-2YMvL7hjjCRjkG9AxtHcSABYjK4uFQonlBVFI'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+Total accounts approval pledges: 31
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+Total accounts approval pledges: 31
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+Fetching AccountsApproval Pledges for user ID: 41, page: 1, limit: 10
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+Fetching Office Pledges for user ID: 41, page: 1, limit: 10
+Total office pledges: 26
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/41
+{
+  id: 38,
+  username: 'muthu.karuppasamy',
+  email: '1234@GMAIL.COM',
+  role: '1',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsInJvbGUiOiIxIiwiaWF0IjoxNzc0ODg2OTE3LCJleHAiOjE3NzQ5NzMzMTd9.NNMIkzalc8bknTmClhoIyMHhXSyh_lqdMBy83p4LiuY'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+GET 304 http://localhost:5000/api/role-permissions/by-role/1
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+Fetching Office Pledges for user ID: 38, page: 1, limit: 10
+Total office pledges: 24
+GET 304 http://localhost:5000/api/pledge-item/executive/1/10/38
+{
+  id: 39,
+  username: 'balamurugan.g',
+  email: 'balag851997@gmail.com',
+  role: '7',
+  branch_id: 5,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiI3IiwiaWF0IjoxNzc0ODg2OTQ5LCJleHAiOjE3NzQ5NzMzNDl9.biFr-q4DbWEugHkzHzI8G8MTUoOxPobtJ6jURA0Halo'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+GET 304 http://localhost:5000/api/role-permissions/by-role/7
+Error fetching purchases: Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6
+    at PromisePoolConnection.query (/home/amazing/Downloads/AI/jewellery_backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at Object.getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/services/purchaseService.js:459:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/controllers/purchaseController.js:180:34) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sql: '\n' +
+    '        SELECT COUNT(*) as total\n' +
+    '        FROM purchases p\n' +
+    '        JOIN user_details ud_creator ON ud_creator.user_id = p.created_by\n' +
+    "        JOIN user_details ud_manager ON ud_manager.user_id = '39'\n" +
+    "        WHERE 1=1 AND p.branch_id = '5' AND ud_creator.company_id = ud_manager.company_id\n" +
+    '        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))\n' +
+    '      ',
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6"
+}
+GET 500 http://localhost:5000/api/purchases/regional-manager/39/5
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+Error fetching purchases: Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6
+    at PromisePoolConnection.query (/home/amazing/Downloads/AI/jewellery_backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at Object.getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/services/purchaseService.js:459:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/controllers/purchaseController.js:180:34) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sql: '\n' +
+    '        SELECT COUNT(*) as total\n' +
+    '        FROM purchases p\n' +
+    '        JOIN user_details ud_creator ON ud_creator.user_id = p.created_by\n' +
+    "        JOIN user_details ud_manager ON ud_manager.user_id = '39'\n" +
+    "        WHERE 1=1 AND p.branch_id = '5' AND ud_creator.company_id = ud_manager.company_id\n" +
+    '        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))\n' +
+    '      ',
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6"
+}
+GET 500 http://localhost:5000/api/purchases/regional-manager/39/5
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 31
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 200 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+GET 201 http://localhost:5000/api/pledge-item/executive/39
+Fetching AccountsApproval Pledges for user ID: 39, page: 1, limit: 10
+Total accounts approval pledges: 31
+Sample outcome (first pledge): {
+  "pledge_id": "#PLEDAM39",
+  "id": 39,
+  "customer_id": "S89",
+  "adhar_number": "448844443172",
+  "pan_number": "undefined",
+  "phone_number": "9655974509",
+  "bill": null,
+  "ornament_photo": null,
+  "product_details": [
+    {
+      "metal": 1,
+      "product": 2,
+      "sub_product": "Stone Necklace",
+      "gross_weight": 10,
+      "dust_weight": 5,
+      "stone_weight": 0,
+      "net_weight": "5.000",
+      "rate": 16043.29,
+      "amount": "73478.27",
+      "purity": "91.60"
+    }
+  ],
+  "remarks": null,
+  "created_at": "2026-03-30T15:20:46.000Z",
+  "role_id": 5,
+  "interest_rate": "undefined",
+  "pledge_amount": "60000",
+  "current_interest": "undefined",
+  "total_payment": "70000.00",
+  "reference": "38",
+  "created_user": {
+    "id": 31,
+    "username": "mariya.j",
+    "role": "5"
+  },
+  "approval": "0",
+  "manager": "33",
+  "money_request_id": "41",
+  "money_request_lat": null,
+  "money_requet_lng": null,
+  "money_rquest_status": null,
+  "accounts_id": null,
+  "accounts_status": null,
+  "collection_id": null,
+  "collection_type": null,
+  "bank_collection_id": null,
+  "bank_collection_status": null,
+  "bank_collection_lat": null,
+  "bank_collection_lng": null,
+  "finance_id": null,
+  "finance_status": null,
+  "finance_lat": null,
+  "finance_lng": null,
+  "gold_collect_id": null,
+  "gold_collect_status": null,
+  "gold_collect_lat": null,
+  "gold_collect_lng": null,
+  "manager_approvel_id": null,
+  "manager_approval_status": null,
+  "regional_id": "39",
+  "regional_status": "1",
+  "approval_accounts_id": "41",
+  "approval_accounts_status": "1",
+  "regional_manager_status": "1",
+  "manage_approval_status": null,
+  "accounts_amount": "1000",
+  "customer_db_id": 92,
+  "customer_name": "SURESH",
+  "customer_photo": null,
+  "aadhar_no": "448844443172",
+  "pan_no": "undefined",
+  "address_1": "37 D ",
+  "address_2": "MARAVAR SOUTH STREET",
+  "area": "WATRAP",
+  "city": "srivilliputtur",
+  "pincode": "626125",
+  "district": "VIRUDHUNAGAR DIST",
+  "state": "TamilNadu",
+  "phoneno": "9655974509",
+  "creator_username": "mariya.j",
+  "creator_role": "5",
+  "weight": 5,
+  "amount": 73478.27,
+  "customer_data": {
+    "id": 39,
+    "customer_name": "SURESH",
+    "customer_id": "S89",
+    "phoneno": "9655974509",
+    "adhar_number": "448844443172",
+    "pan_number": "undefined",
+    "phone_number": "9655974509",
+    "bill": null,
+    "ornament_photo": null,
+    "product_details": "[{\"metal\":1,\"product\":2,\"sub_product\":\"Stone Necklace\",\"gross_weight\":10,\"dust_weight\":5,\"stone_weight\":0,\"net_weight\":\"5.000\",\"rate\":16043.29,\"amount\":\"73478.27\",\"purity\":\"91.60\"}]",
+    "remarks": null,
+    "created_at": "2026-03-30T15:20:46.000Z",
+    "role_id": 5,
+    "interest_rate": "undefined",
+    "pledge_amount": "60000",
+    "current_interest": "undefined",
+    "total_payment": "70000.00",
+    "reference": "38",
+    "created_user": 31,
+    "approval": "0",
+    "manager": "33",
+    "money_request_id": "41",
+    "money_request_lat": null,
+    "money_requet_lng": null,
+    "money_rquest_status": null,
+    "accounts_id": null,
+    "accounts_status": null,
+    "collection_id": null,
+    "collection_type": null,
+    "bank_collection_id": null,
+    "bank_collection_status": null,
+    "bank_collection_lat": null,
+    "bank_collection_lng": null,
+    "finance_id": null,
+    "finance_status": null,
+    "finance_lat": null,
+    "finance_lng": null,
+    "gold_collect_id": null,
+    "gold_collect_status": null,
+    "gold_collect_lat": null,
+    "gold_collect_lng": null,
+    "manager_approvel_id": null,
+    "manager_approval_status": null,
+    "regional_id": "39",
+    "regional_status": "1",
+    "approval_accounts_id": "41",
+    "approval_accounts_status": "1",
+    "regional_manager_status": "1",
+    "manage_approval_status": null,
+    "accounts_amount": "1000",
+    "customer_db_id": 92,
+    "customer_photo": null,
+    "aadhar_no": "448844443172",
+    "pan_no": "undefined",
+    "address_1": "37 D ",
+    "address_2": "MARAVAR SOUTH STREET",
+    "area": "WATRAP",
+    "city": "srivilliputtur",
+    "pincode": "626125",
+    "district": "VIRUDHUNAGAR DIST",
+    "state": "TamilNadu",
+    "creator_username": "mariya.j",
+    "creator_role": "5"
+  }
+}
+GET 304 http://localhost:5000/api/pledge-item/accounts_approval/1/10/39
+{
+  id: 1,
+  username: 'superadmin',
+  email: 'superadmin@gmail.com',
+  role: '4',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IjQiLCJpYXQiOjE3NzQ4ODcxNDUsImV4cCI6MTc3NDk3MzU0NX0.Nr3BDTdT7IFo56Kt41DnEdwSt2qbKBowToKDAq4IjOI'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg3MjIxLCJleHAiOjE3NzQ5NzM2MjF9.IW3zYcRL6OIOLBZNUtV9wVGHkVgH42BqPGWS0bpmDXo'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+Error fetching purchases: Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6
+    at PromisePoolConnection.query (/home/amazing/Downloads/AI/jewellery_backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at Object.getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/services/purchaseService.js:459:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/controllers/purchaseController.js:180:34) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sql: '\n' +
+    '        SELECT COUNT(*) as total\n' +
+    '        FROM purchases p\n' +
+    '        JOIN user_details ud_creator ON ud_creator.user_id = p.created_by\n' +
+    "        JOIN user_details ud_manager ON ud_manager.user_id = '41'\n" +
+    "        WHERE 1=1 AND p.branch_id = '1' AND ud_creator.company_id = ud_manager.company_id\n" +
+    '        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))\n' +
+    '      ',
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6"
+}
+GET 500 http://localhost:5000/api/purchases/regional-manager/41/1
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+Error fetching purchases: Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6
+    at PromisePoolConnection.query (/home/amazing/Downloads/AI/jewellery_backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at Object.getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/services/purchaseService.js:459:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/controllers/purchaseController.js:180:34) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sql: '\n' +
+    '        SELECT COUNT(*) as total\n' +
+    '        FROM purchases p\n' +
+    '        JOIN user_details ud_creator ON ud_creator.user_id = p.created_by\n' +
+    "        JOIN user_details ud_manager ON ud_manager.user_id = '41'\n" +
+    "        WHERE 1=1 AND p.branch_id = '1' AND ud_creator.company_id = ud_manager.company_id\n" +
+    '        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))\n' +
+    '      ',
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6"
+}
+GET 500 http://localhost:5000/api/purchases/regional-manager/41/1
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/purchases/accounts/41/1
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/melting_purchase/acctounts_melt/?page=1&limit=10&search=&metal=
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+Error fetching purchases: Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6
+    at PromisePoolConnection.query (/home/amazing/Downloads/AI/jewellery_backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at Object.getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/services/purchaseService.js:459:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/controllers/purchaseController.js:180:34) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sql: '\n' +
+    '        SELECT COUNT(*) as total\n' +
+    '        FROM purchases p\n' +
+    '        JOIN user_details ud_creator ON ud_creator.user_id = p.created_by\n' +
+    "        JOIN user_details ud_manager ON ud_manager.user_id = '41'\n" +
+    "        WHERE 1=1 AND p.branch_id = '1' AND ud_creator.company_id = ud_manager.company_id\n" +
+    '        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))\n' +
+    '      ',
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6"
+}
+GET 500 http://localhost:5000/api/purchases/regional-manager/41/1
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+Error fetching purchases: Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6
+    at PromisePoolConnection.query (/home/amazing/Downloads/AI/jewellery_backend/node_modules/mysql2/lib/promise/connection.js:29:22)
+    at Object.getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/services/purchaseService.js:459:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAllPurchasesRegional (/home/amazing/Downloads/AI/jewellery_backend/src/controllers/purchaseController.js:180:34) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sql: '\n' +
+    '        SELECT COUNT(*) as total\n' +
+    '        FROM purchases p\n' +
+    '        JOIN user_details ud_creator ON ud_creator.user_id = p.created_by\n' +
+    "        JOIN user_details ud_manager ON ud_manager.user_id = '41'\n" +
+    "        WHERE 1=1 AND p.branch_id = '1' AND ud_creator.company_id = ud_manager.company_id\n" +
+    '        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))\n' +
+    '      ',
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JSON))' at line 6"
+}
+GET 500 http://localhost:5000/api/purchases/regional-manager/41/1
+GET 304 http://localhost:5000/api/metals/?page=1&limit=10
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/products/?page=1&limit=1000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+GET 304 http://localhost:5000/api/sub-products/?page=1&limit=100000
+{
+  id: 1,
+  username: 'superadmin',
+  email: 'superadmin@gmail.com',
+  role: '4',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IjQiLCJpYXQiOjE3NzQ4ODcyNzMsImV4cCI6MTc3NDk3MzY3M30.l7oGEYU77aiH6KXZNodAGszYzJFwfAG0KxSKSudR1No'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+PUT 200 http://localhost:5000/api/role-permissions/7
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 200 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/roles/?page=1&limit=100
+GET 304 http://localhost:5000/api/role-permissions/by-role/4
+GET 304 http://localhost:5000/api/role-permissions/?page=1&limit=10
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg3NTg0LCJleHAiOjE3NzQ5NzM5ODR9.oHGTW1jz37gEUgnJ0oJRhm6YynHZriAg7JDWWDdDMfg'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg3NjE4LCJleHAiOjE3NzQ5NzQwMTh9.N9ZCAMp4IQm8Ucvdh1g85KMRcfrZcIzeOzpGf0l8Vg0'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 200 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 200 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg3NzI2LCJleHAiOjE3NzQ5NzQxMjZ9.M3toKJv-TCzciMMBnSzq_L-D9eGh1OQF26eXugHKxTQ'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 201 http://localhost:5000/api/pledge-item/executive/33
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg3OTg3LCJleHAiOjE3NzQ5NzQzODd9.JPlht4QbjiaI0eUta-nBnK19QDIqdnQQvu8g4XGIDVE'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+PUT 200 http://localhost:5000/api/pledge-item/money_request/39
+GET 200 http://localhost:5000/api/pledge-item/money_request/1/10/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg4MDM0LCJleHAiOjE3NzQ5NzQ0MzR9.NVf4CPUKNGKbmUKxROvuEAyW7iZVsxC9CNxKn-wx6EI'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg4MDcyLCJleHAiOjE3NzQ5NzQ0NzJ9.CHwGfyO5K0eOr5H2J1lyMOmDU3NCXBHlX-PFHwNOYYA'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+PUT 200 http://localhost:5000/api/pledge-item/money_request/39
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg4MTE5LCJleHAiOjE3NzQ5NzQ1MTl9.w20BnENn3ODQAP_mh_yNY9YMzp6H-gqoW-D6uNn1YtA'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg4Mzk4LCJleHAiOjE3NzQ5NzQ3OTh9.xfFfFph75_-GZTlcjqrzC3WxtdE7YqEJOfR2Aj_Kz6s'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+PUT 200 http://localhost:5000/api/pledge-item/money_request/39
+GET 200 http://localhost:5000/api/pledge-item/money_request/1/10/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg4NDMzLCJleHAiOjE3NzQ5NzQ4MzN9.w5c1sMiZWpeGTMcAxXB9wVvkFX0cosI4fyhbytTBg4o'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+{
+  id: 41,
+  username: 'accounts.accounts',
+  email: 'sankarvjss78@gmail.com',
+  role: '6',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsInJvbGUiOiI2IiwiaWF0IjoxNzc0ODg4NDc4LCJleHAiOjE3NzQ5NzQ4Nzh9.jUAs8pw4apdS7ZDU5X2QuKUxtdCFprgZzVfs9SSOMUg'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/role-permissions/by-role/6
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 304 http://localhost:5000/api/pledge-item/money_request/1/10/41
+GET 201 http://localhost:5000/api/pledge-item/executive/41
+PUT 200 http://localhost:5000/api/pledge-item/money_request/39
+GET 200 http://localhost:5000/api/pledge-item/money_request/1/10/41
+{
+  id: 33,
+  username: 'm.subbiah',
+  email: '123@GMAIL.COM',
+  role: '2',
+  branch_id: 1,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiIyIiwiaWF0IjoxNzc0ODg4NTYyLCJleHAiOjE3NzQ5NzQ5NjJ9.rqfwNOKxYzEgwFy2S-AxQhyRW-j92Sl139_bHsB582U'
+}
+POST 200 http://localhost:5000/api/admin/login
+GET 304 http://localhost:5000/api/roles/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/role-permissions/by-role/2
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Connected to MySQL database
