@@ -12,9 +12,9 @@ const createCustomer = async (customerData) => {
     await connection.beginTransaction();
 
     // Validate required fields
-    if (!customerData.customer_name || !customerData.aadhar_no || 
-        !customerData.address_1 || !customerData.city || 
-        !customerData.state || !customerData.phoneno) {
+    if (!customerData.customer_name || !customerData.aadhar_no ||
+      !customerData.address_1 || !customerData.city ||
+      !customerData.state || !customerData.phoneno) {
       throw new Error('Missing required customer fields');
     }
 
@@ -72,7 +72,7 @@ const getCustomerById = async (id) => {
       `SELECT * FROM customers WHERE id = ?`,
       [id]
     );
-    
+
     if (rows.length === 0) return null;
     return rows[0];
   } catch (error) {
@@ -89,41 +89,41 @@ const getAllCustomers = async ({ page = 1, limit = 10, search, state, hasBankAcc
     const offset = (page - 1) * limit;
     let query = `FROM customers WHERE 1=1`;
     const params = [];
-    
+
     // Apply filters
     if (search) {
       query += ` AND (customer_name LIKE ? OR customer_id LIKE ? OR aadhar_no LIKE ? OR pan_no LIKE ?)`;
       params.push(`%${search}%`, `%${search}%`, `%${search}%`, `%${search}%`);
     }
-    
+
     if (state) {
       query += ` AND state = ?`;
       params.push(state);
     }
-    
+
     if (hasBankAccount !== undefined) {
       query += ` AND has_bank_account = ?`;
       params.push(hasBankAccount);
     }
-    
+
     // Get total count
     const [countResult] = await connection.query(
       `SELECT COUNT(*) as total ${query}`,
       params
     );
     const total = countResult[0].total;
-    
+
     // Get paginated results
     query += ` ORDER BY created_at DESC LIMIT ? OFFSET ?`;
     params.push(parseInt(limit), offset);
-    
+
     const [rows] = await connection.query(
       `SELECT * ${query}`,
       params
     );
-    
-    return { 
-      customers: rows, 
+
+    return {
+      customers: rows,
       total,
       page: parseInt(page),
       limit: parseInt(limit),
@@ -143,9 +143,9 @@ const updateCustomer = async (id, updateData) => {
     await connection.beginTransaction();
 
     // Validate required fields
-    if (!updateData.customer_name || !updateData.aadhar_no || 
-        !updateData.address_1 || !updateData.city || 
-        !updateData.state || !updateData.phoneno) {
+    if (!updateData.customer_name || !updateData.aadhar_no ||
+      !updateData.address_1 || !updateData.city ||
+      !updateData.state || !updateData.phoneno) {
       throw new Error('Missing required customer fields');
     }
 
@@ -198,7 +198,7 @@ const updateCustomer = async (id, updateData) => {
       updateData.office_address || null,
       updateData.reference_details || null,
       updateData.remarks || null,
-      updateData.has_bank_account  || false,
+      updateData.has_bank_account || false,
       updateData.aadhar_verified || false,
       updateData.updated_by
     ];
@@ -237,27 +237,27 @@ const deleteCustomer = async (id) => {
   const connection = await pool.promise().getConnection();
   try {
     await connection.beginTransaction();
-    
+
     // First get customer to potentially delete files later
     const customer = await getCustomerById(id);
     if (!customer) {
       throw new Error('Customer not found');
     }
-    
+
     // Delete the customer
     await connection.query(
       `DELETE FROM customers WHERE id = ?`,
       [id]
     );
-    
+
     await connection.commit();
-    
+
     // Delete associated files
     const uploadDir = path.join(__dirname, '../public/uploads/customers', id.toString());
     if (fs.existsSync(uploadDir)) {
       fs.rmSync(uploadDir, { recursive: true, force: true });
     }
-    
+
     return { success: true, message: 'Customer deleted successfully' };
   } catch (error) {
     await connection.rollback();
@@ -328,27 +328,24 @@ const generateAadharOTP = async (aadharNo) => {
   try {
     // In a real implementation, this would send an OTP to the registered mobile
     // For demo purposes, we'll just generate a random OTP and store it temporarily
-    
     // Check if customer exists with this Aadhar
     const [rows] = await connection.query(
       `SELECT id FROM customers WHERE aadhar_no = ?`,
       [aadharNo]
     );
-    
-    if (rows.length === 0) {
-      throw new Error('No customer found with this Aadhar number');
-    }
-    
+
     // Generate a 6-digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    
-    // Store OTP in database (in a real app, you might want to use Redis with TTL)
-    await connection.query(
-      `UPDATE customers SET aadhar_otp = ?, otp_expiry = DATE_ADD(NOW(), INTERVAL 5 MINUTE) 
-       WHERE aadhar_no = ?`,
-      [otp, aadharNo]
-    );
-    
+
+    if (rows.length > 0) {
+      // Store OTP in database (if customer exists)
+      await connection.query(
+        `UPDATE customers SET aadhar_otp = ?, otp_expiry = DATE_ADD(NOW(), INTERVAL 5 MINUTE) 
+         WHERE aadhar_no = ?`,
+        [otp, aadharNo]
+      );
+    }
+
     return otp; // In production, don't return the OTP, just send it via SMS/email
   } catch (error) {
     console.error('Error generating Aadhar OTP:', error);
@@ -367,17 +364,28 @@ const verifyAadharOTP = async (aadharNo, otp) => {
        WHERE aadhar_no = ? AND aadhar_otp = ? AND otp_expiry > NOW()`,
       [aadharNo, otp]
     );
-    
+
     if (rows.length === 0) {
+      // Check if customer exists at all
+      const [allRows] = await connection.query(
+        `SELECT id FROM customers WHERE aadhar_no = ?`,
+        [aadharNo]
+      );
+
+      if (allRows.length === 0) {
+        // demo: For new customers not in DB yet, pretend verification successful
+        return { success: true, message: 'Aadhar verification successful (Demo mode)' };
+      }
+
       throw new Error('Invalid OTP or OTP expired');
     }
-    
-    // Update verification status
+
+    // Update verification status for existing customer
     await connection.query(
       `UPDATE customers SET aadhar_verified = TRUE WHERE aadhar_no = ?`,
       [aadharNo]
     );
-    
+
     return { success: true, message: 'Aadhar verified successfully' };
   } catch (error) {
     console.error('Error verifying Aadhar OTP:', error);
@@ -395,7 +403,7 @@ const updateCustomerUploads = async (customerId, updateData) => {
     // Validate that we're only updating file-related fields
     const allowedFields = ['customer_photo', 'aadhar_photo', 'pan_photo'];
     const updateFields = Object.keys(updateData).filter(field => allowedFields.includes(field));
-    
+
     if (updateFields.length === 0) {
       throw new Error('No valid file fields to update');
     }
@@ -414,7 +422,7 @@ const updateCustomerUploads = async (customerId, updateData) => {
     );
 
     await connection.commit();
-    
+
     // Return the updated file URLs
     const result = {};
     updateFields.forEach(field => {

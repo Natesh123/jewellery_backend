@@ -5237,3 +5237,49 @@ GET 304 http://localhost:5000/api/pledge-item/collection/1/10/33
 [32m[nodemon] starting `node app.js`[39m
 Server running on port 5000
 Connected to MySQL database
+[32m[nodemon] restarting child process[39m
+[32m[nodemon] starting `node app.js`[39m
+Server running on port 5000
+Database connection failed: Access denied for user 'shashestudies_amayagoldpoint'@'localhost' (using password: YES)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+
+  #  Node.js[30551]: void node::ResetStdio() at ../src/node.cc:751
+  #  Assertion failed: !(err != 0) || (err == -1 && (*__errno_location ()) == 1)
+
+----- Native stack trace -----
+
+ 1: 0xcc80b7 node::Assert(node::AssertionInfo const&) [node]
+ 2: 0xc78034  [node]
+ 3: 0x7475bdc45495  [/lib/x86_64-linux-gnu/libc.so.6]
+ 4: 0x7475bdc45610 on_exit [/lib/x86_64-linux-gnu/libc.so.6]
+ 5: 0xbd94af node::DefaultProcessExitHandlerInternal(node::Environment*, node::ExitCode) [node]
+ 6: 0xc3851f node::Environment::Exit(node::ExitCode) [node]
+ 7: 0xf6e4ff v8::internal::FunctionCallbackArguments::Call(v8::internal::CallHandlerInfo) [node]
+ 8: 0xf6ed6d  [node]
+ 9: 0xf6f235 v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*) [node]
+10: 0x1979df6  [node]
+
+  #  Node.js[30551]: void node::ResetStdio() at ../src/node.cc:751
+  #  Assertion failed: !(err != 0) || (err == -1 && (*__errno_location ()) == 1)
+
+----- Native stack trace -----
+
+ 1: 0xcc80b7 node::Assert(node::AssertionInfo const&) [node]
+ 2: 0xc78034  [node]
+ 3: 0xc7864d node::TrapWebAssemblyOrContinue(int, siginfo_t*, void*) [node]
+ 4: 0x7475bdc42520  [/lib/x86_64-linux-gnu/libc.so.6]
+ 5: 0x15a9920 v8::internal::tracing::TraceEventHelper::GetTracingController() [node]
+ 6: 0x1080505 v8::internal::Isolate::CaptureDetailedStackTrace(int, v8::StackTrace::StackTraceOptions) [node]
+ 7: 0xf0ee20 v8::StackTrace::CurrentStackTrace(v8::Isolate*, int, v8::StackTrace::StackTraceOptions) [node]
+ 8: 0xcc8016 node::GetCurrentStackTrace(v8::Isolate*, int) [node]
+ 9: 0xc1977b node::DumpJavaScriptBacktrace(_IO_FILE*) [node]
+10: 0xcc80c3 node::Assert(node::AssertionInfo const&) [node]
+11: 0xc78034  [node]
+12: 0x7475bdc45495  [/lib/x86_64-linux-gnu/libc.so.6]
+13: 0x7475bdc45610 on_exit [/lib/x86_64-linux-gnu/libc.so.6]
+14: 0xbd94af node::DefaultProcessExitHandlerInternal(node::Environment*, node::ExitCode) [node]
+15: 0xc3851f node::Environment::Exit(node::ExitCode) [node]
+16: 0xf6e4ff v8::internal::FunctionCallbackArguments::Call(v8::internal::CallHandlerInfo) [node]
+17: 0xf6ed6d  [node]
+18: 0xf6f235 v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*) [node]
+19: 0x1979df6  [node]
