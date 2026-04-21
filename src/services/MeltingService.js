@@ -46,6 +46,12 @@ const createSalesPayment = async (id, paymentData) => {
   const connection = await pool.promise().getConnection();
   try {
     await connection.beginTransaction();
+
+    let paymentType = paymentData.payment_type || 'Cash';
+    if (Array.isArray(paymentType)) {
+      paymentType = paymentType.join(', ');
+    }
+
     const paymentSql = `
     INSERT INTO sales_payments (
       melt_id, 
@@ -65,7 +71,7 @@ const createSalesPayment = async (id, paymentData) => {
       id, // melt_id
       paymentData.user_id || 0, // user_id
       paymentData.user_name || 'System', // user_name
-      paymentData.payment_type, // payment_type
+      paymentType, // payment_type
       paymentData.total_amount?.toString() || '0', // total_payment
       paymentData.completed_payment?.toString() || '0', // completed_payment
       paymentData.pending_payment?.toString() || '0', // pending_payment
@@ -76,9 +82,9 @@ const createSalesPayment = async (id, paymentData) => {
 
     await connection.query(paymentSql, paymentValues);
     await connection.commit();
-    return { message: "Record copied to melting_purchase successfully" };
+    return { message: "Payment recorded successfully" };
   } catch (error) {
-    console.error("Error in createMeltingPurchase:", error);
+    console.error("Error in createSalesPayment:", error);
     await connection.rollback();
     throw error;
   } finally {
@@ -105,7 +111,7 @@ const updateMeltProduct = async (id, data) => {
       "assign_customer_name",
       "assign_customer_payment_type",
       "assigned_at",
-      "wages"
+      "total_wage"
     ];
     const fields = [];
     const values = [];
@@ -128,7 +134,22 @@ const updateMeltProduct = async (id, data) => {
 
     // Check if assign_customer is being set and payment details are provided
     if (data.assign_customer !== undefined && data.payment_details) {
-      const paymentData = data.payment_details;
+      let paymentData = data.payment_details;
+
+      // Parse if it's a string
+      if (typeof paymentData === 'string') {
+        try {
+          paymentData = JSON.parse(paymentData);
+        } catch (e) {
+          console.error("Error parsing payment_details in updateMeltProduct", e);
+        }
+      }
+
+      // Handle payment_type as array (join with comma)
+      let paymentType = paymentData.payment_type || 'Cash';
+      if (Array.isArray(paymentType)) {
+        paymentType = paymentType.join(', ');
+      }
 
       // Insert into sales_payments table
       const paymentSql = `
@@ -150,10 +171,10 @@ const updateMeltProduct = async (id, data) => {
         id, // melt_id
         paymentData.user_id || 0, // user_id
         paymentData.user_name || 'System', // user_name
-        paymentData.payment_type, // payment_type
+        paymentType, // payment_type (now forced non-null)
         paymentData.total_amount?.toString() || '0', // total_payment
         paymentData.paid_amount?.toString() || '0', // completed_payment
-        paymentData.due_amount?.toString() || '0', // pending_payment
+        (paymentData.due_amount || paymentData.round_off_amount || '0').toString(), // pending_payment
         paymentData.transaction_id || null, // transaction_id
         paymentData.cheque_number || null, // cheque_number
         paymentData.bank_name || null
@@ -191,7 +212,7 @@ const getAllSmith = async () => {
 
 const getAllWages = async (req) => {
   const connection = await pool.promise().getConnection();
-  
+
   try {
     const baseQuery = `SELECT * FROM melt WHERE assign_smith_name = ? AND wages_status = 0`;
     const sumQuery = `SELECT SUM(total_wage) as totalWages FROM melt WHERE assign_smith_name = ? AND wages_status = 0`;
@@ -333,6 +354,15 @@ const getAllMeltProducts = async ({
     const [rows] = await connection.query(baseQuery, params);
     const [countResult] = await connection.query(countQuery, params.slice(0, -2)); // exclude limit & offset
 
+    // Attach payments to each row
+    for (let row of rows) {
+      const [payments] = await connection.query(
+        `SELECT * FROM sales_payments WHERE melt_id = ?`,
+        [row.id]
+      );
+      row.sales_payments = payments;
+    }
+
     return {
       purchases: rows,
       total: countResult[0].total
@@ -359,7 +389,7 @@ const getAllMeltReceiptProducts = async ({
   const connection = await pool.promise().getConnection();
   try {
     const offset = (page - 1) * limit;
-    
+
     let baseQuery = `SELECT * FROM melt WHERE 1=1`;
     let countQuery = `SELECT COUNT(*) AS total FROM melt WHERE 1=1`;
     const params = [];
@@ -399,13 +429,22 @@ const getAllMeltReceiptProducts = async ({
     const [rows] = await connection.query(baseQuery, params);
     const [countResult] = await connection.query(countQuery, params.slice(0, -2)); // exclude limit & offset
 
+    // Attach payments to each row
+    for (let row of rows) {
+      const [payments] = await connection.query(
+        `SELECT * FROM sales_payments WHERE melt_id = ?`,
+        [row.id]
+      );
+      row.sales_payments = payments;
+    }
+
     return {
       purchases: rows,
       total: countResult[0].total
     };
 
   } catch (error) {
-    console.error("Error in getAllMeltProducts:", error);
+    console.error("Error in getAllMeltReceiptProducts:", error);
     throw error;
   } finally {
     connection.release();
