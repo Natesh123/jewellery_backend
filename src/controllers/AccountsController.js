@@ -88,6 +88,92 @@ const getAllState = async (req, res) => {
     }
 };
 
+const createOpeningBalance = async (req, res, next) => {
+    try {
+        const result = await masterGroupingService.createOpeningBalance(req.body);
+        successResponse(res, result, 201);
+    } catch (error) {
+        console.error('Error in createOpeningBalance:', error);
+        errorResponse(res, error.message, 400, error);
+    }
+};
+
+const getAllOpeningBalances = async (req, res) => {
+    try {
+        const { search } = req.query;
+        const result = await masterGroupingService.getAllOpeningBalances(search);
+        res.json({ success: true, data: result });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Failed to fetch opening balances" });
+    }
+};
+
+const updateOpeningBalance = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const result = await masterGroupingService.updateOpeningBalance(id, req.body);
+        successResponse(res, result, 200);
+    } catch (error) {
+        console.error('Error in updateOpeningBalance:', error);
+        errorResponse(res, error.message, 400, error);
+    }
+};
+
+const deleteOpeningBalance = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const result = await masterGroupingService.deleteOpeningBalance(id);
+        successResponse(res, result, 200);
+    } catch (error) {
+        console.error('Error in deleteOpeningBalance:', error);
+        errorResponse(res, error.message, 400, error);
+    }
+};
+
+const createOpeningStock = async (req, res, next) => {
+    try {
+        const result = await masterGroupingService.createOpeningStock(req.body);
+        successResponse(res, result, 201);
+    } catch (error) {
+        console.error('Error in createOpeningStock:', error);
+        errorResponse(res, error.message, 400, error);
+    }
+};
+
+const getAllOpeningStocks = async (req, res) => {
+    try {
+        const { search } = req.query;
+        const result = await masterGroupingService.getAllOpeningStocks(search);
+        res.json({ success: true, data: result });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Failed to fetch opening stocks" });
+    }
+};
+
+const updateOpeningStock = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const result = await masterGroupingService.updateOpeningStock(id, req.body);
+        successResponse(res, result, 200);
+    } catch (error) {
+        console.error('Error in updateOpeningStock:', error);
+        errorResponse(res, error.message, 400, error);
+    }
+};
+
+const deleteOpeningStock = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const result = await masterGroupingService.deleteOpeningStock(id);
+        successResponse(res, result, 200);
+    } catch (error) {
+        console.error('Error in deleteOpeningStock:', error);
+        errorResponse(res, error.message, 400, error);
+    }
+};
+
 
 
 module.exports = {
@@ -98,5 +184,13 @@ module.exports = {
     createReceipt,
     getAllReceipts,
     createState,
-    getAllState
+    getAllState,
+    createOpeningBalance,
+    getAllOpeningBalances,
+    updateOpeningBalance,
+    deleteOpeningBalance,
+    createOpeningStock,
+    getAllOpeningStocks,
+    updateOpeningStock,
+    deleteOpeningStock
 };

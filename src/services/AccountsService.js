@@ -302,6 +302,229 @@ const getAllReceipts = async () => {
       connection.release();
     }
   };
+
+const createOpeningBalance = async (data) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        await connection.beginTransaction();
+
+        const sql = `
+            INSERT INTO opening_balance 
+            (date, group_name, account_head, narration, weight_debit, weight_credit, amount_debit, amount_credit)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        await connection.query(sql, [
+            data.date,
+            data.group_name,
+            data.account_head,
+            data.narration,
+            data.weight_debit || 0,
+            data.weight_credit || 0,
+            data.amount_debit || 0,
+            data.amount_credit || 0
+        ]);
+
+        await connection.commit();
+        return { message: "Opening balance created successfully" };
+    } catch (error) {
+        console.error("Error in createOpeningBalance:", error);
+        await connection.rollback();
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const getAllOpeningBalances = async (search) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        let query = `SELECT * FROM opening_balance WHERE 1=1`;
+        const params = [];
+
+        if (search) {
+            query += ` AND (group_name LIKE ? OR account_head LIKE ?)`;
+            params.push(`%${search}%`, `%${search}%`);
+        }
+
+        query += ` ORDER BY id DESC`;
+
+        const [rows] = await connection.query(query, params);
+        return rows;
+    } catch (error) {
+        console.error("Error in getAllOpeningBalances:", error);
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const updateOpeningBalance = async (id, data) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        await connection.beginTransaction();
+
+        const sql = `
+            UPDATE opening_balance 
+            SET date = ?, group_name = ?, account_head = ?, narration = ?, 
+                weight_debit = ?, weight_credit = ?, amount_debit = ?, amount_credit = ?
+            WHERE id = ?
+        `;
+
+        await connection.query(sql, [
+            data.date,
+            data.group_name,
+            data.account_head,
+            data.narration,
+            data.weight_debit || 0,
+            data.weight_credit || 0,
+            data.amount_debit || 0,
+            data.amount_credit || 0,
+            id
+        ]);
+
+        await connection.commit();
+        return { message: "Opening balance updated successfully" };
+    } catch (error) {
+        console.error("Error in updateOpeningBalance:", error);
+        await connection.rollback();
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const deleteOpeningBalance = async (id) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        await connection.beginTransaction();
+
+        await connection.query(`DELETE FROM opening_balance WHERE id = ?`, [id]);
+
+        await connection.commit();
+        return { message: "Opening balance deleted successfully" };
+    } catch (error) {
+        console.error("Error in deleteOpeningBalance:", error);
+        await connection.rollback();
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const createOpeningStock = async (data) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        await connection.beginTransaction();
+
+        const sql = `
+            INSERT INTO opening_stock 
+            (date, category, product, sub_product, purity, gross_weight, less_weight, net_weight, rate, amount)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        await connection.query(sql, [
+            data.date,
+            data.category,
+            data.product,
+            data.sub_product,
+            data.purity,
+            data.gross_weight || 0,
+            data.less_weight || 0,
+            data.net_weight || 0,
+            data.rate || 0,
+            data.amount || 0
+        ]);
+
+        await connection.commit();
+        return { message: "Opening stock created successfully" };
+    } catch (error) {
+        console.error("Error in createOpeningStock:", error);
+        await connection.rollback();
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const getAllOpeningStocks = async (search) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        let query = `SELECT * FROM opening_stock WHERE 1=1`;
+        const params = [];
+
+        if (search) {
+            query += ` AND (category LIKE ? OR product LIKE ? OR sub_product LIKE ?)`;
+            params.push(`%${search}%`, `%${search}%`, `%${search}%`);
+        }
+
+        query += ` ORDER BY id DESC`;
+
+        const [rows] = await connection.query(query, params);
+        return rows;
+    } catch (error) {
+        console.error("Error in getAllOpeningStocks:", error);
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const updateOpeningStock = async (id, data) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        await connection.beginTransaction();
+
+        const sql = `
+            UPDATE opening_stock 
+            SET date = ?, category = ?, product = ?, sub_product = ?, purity = ?, 
+                gross_weight = ?, less_weight = ?, net_weight = ?, rate = ?, amount = ?
+            WHERE id = ?
+        `;
+
+        await connection.query(sql, [
+            data.date,
+            data.category,
+            data.product,
+            data.sub_product,
+            data.purity,
+            data.gross_weight || 0,
+            data.less_weight || 0,
+            data.net_weight || 0,
+            data.rate || 0,
+            data.amount || 0,
+            id
+        ]);
+
+        await connection.commit();
+        return { message: "Opening stock updated successfully" };
+    } catch (error) {
+        console.error("Error in updateOpeningStock:", error);
+        await connection.rollback();
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
+const deleteOpeningStock = async (id) => {
+    const connection = await pool.promise().getConnection();
+    try {
+        await connection.beginTransaction();
+
+        await connection.query(`DELETE FROM opening_stock WHERE id = ?`, [id]);
+
+        await connection.commit();
+        return { message: "Opening stock deleted successfully" };
+    } catch (error) {
+        console.error("Error in deleteOpeningStock:", error);
+        await connection.rollback();
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
   
 
 module.exports = {
@@ -312,5 +535,14 @@ module.exports = {
     createReceipt,
     getAllReceipts,
     createState,
-    getAllState
+    getAllState,
+    createOpeningBalance,
+    getAllOpeningBalances,
+    updateOpeningBalance,
+    deleteOpeningBalance,
+    createOpeningStock,
+    getAllOpeningStocks,
+    updateOpeningStock,
+    deleteOpeningStock
+
 };

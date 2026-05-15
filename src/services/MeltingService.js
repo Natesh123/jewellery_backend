@@ -111,7 +111,10 @@ const updateMeltProduct = async (id, data) => {
       "assign_customer_name",
       "assign_customer_payment_type",
       "assigned_at",
-      "total_wage"
+      "total_wage",
+      "cgst",
+      "sgst",
+      "round_off"
     ];
     const fields = [];
     const values = [];
