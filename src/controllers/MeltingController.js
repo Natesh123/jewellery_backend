@@ -29,7 +29,7 @@ const createMeltProducts = async (req, res, next) => {
     const result = await purchaseService.createMeltProducts(req.body);
     successResponse(res, result, 201);
   } catch (error) {
-    console.error('Error in createMeltingPurchase:', error);
+    console.error('Error in createMeltProducts:', error);
     errorResponse(res, error.message, 400, error);
   }
 };
@@ -40,7 +40,7 @@ const updateMeltProduct = async (req, res, next) => {
     const result = await purchaseService.updateMeltProduct(req.params.id, req.body);
     successResponse(res, result, 201);
   } catch (error) {
-    console.error('Error in createMeltingPurchase:', error);
+    console.error('Error in updateMeltProduct:', error);
     errorResponse(res, error.message, 400, error);
   }
 };

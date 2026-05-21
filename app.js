@@ -71,6 +71,7 @@ app.use('/api/melting_purchase', require('./src/routes/MeltingRoute'));
 app.use('/api/accounts', require('./src/routes/AccountsRoute'));
 app.use('/api/live-rates', require('./src/routes/LiveRateRoutes'));
 app.use('/api/margin-settings', require('./src/routes/MarginSettingsRoute'));
+app.use('/api/reports', require('./src/routes/reportRoutes'));
 
   
 
