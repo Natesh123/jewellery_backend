@@ -167,15 +167,28 @@ const getDayBookReport = async (startDate, endDate) => {
 
                 UNION ALL
 
-                -- Purchase Payments (Credit/Outflow)
+                -- Purchase Payments (Credit/Outflow) from purchase_payments table
                 SELECT 
                     DATE(recorded_at) as date,
-                    CONCAT('Purchase: ', COALESCE((SELECT customer_name FROM customers WHERE id = (SELECT customer_id FROM purchases WHERE id = pp.purchase_id)), 'Supplier')) as description,
+                    CONCAT('Purchase Payment: ', COALESCE((SELECT customer_name FROM customers WHERE id = (SELECT customer_id FROM purchases WHERE id = pp.purchase_id)), 'Supplier')) as description,
                     0 as debit,
                     amount as credit,
                     'purchase' as type
                 FROM purchase_payments pp
                 WHERE recorded_at BETWEEN ? AND ?
+
+                UNION ALL
+
+                -- Direct Purchases (Credit/Outflow) from purchases table
+                SELECT 
+                    DATE(p.created_at) as date,
+                    CONCAT('Purchase: ', p.purchase_id, ' - ', COALESCE(p.customer_name, 'Supplier')) as description,
+                    0 as debit,
+                    CAST(COALESCE(p.total_amount, 0) AS DECIMAL(15,2)) as credit,
+                    'purchase' as type
+                FROM purchases p
+                WHERE p.created_at BETWEEN ? AND ?
+                AND p.id NOT IN (SELECT purchase_id FROM purchase_payments)
 
                 UNION ALL
 
@@ -206,6 +219,7 @@ const getDayBookReport = async (startDate, endDate) => {
 
         const [transactions] = await connection.query(transactionsQuery, [
             sDate, eDate, 
+            sDate, eDate + ' 23:59:59', 
             sDate, eDate + ' 23:59:59', 
             sDate, eDate + ' 23:59:59', 
             sDate, eDate + ' 23:59:59', 
