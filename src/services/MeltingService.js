@@ -387,7 +387,8 @@ const getAllMeltReceiptProducts = async ({
   metal,
   status,
   startDate,
-  endDate
+  endDate,
+  isSales
 }) => {
   const connection = await pool.promise().getConnection();
   try {
@@ -419,7 +420,13 @@ const getAllMeltReceiptProducts = async ({
       params.push(startDate, endDate);
     }
 
-    baseQuery += ' AND assign_smith_name IS NOT NULL';
+    if (isSales && isSales !== 'false') {
+      baseQuery += ' AND assign_customer > 0';
+      countQuery += ' AND assign_customer > 0';
+    } else {
+      baseQuery += ' AND assign_smith_name IS NOT NULL';
+      countQuery += ' AND assign_smith_name IS NOT NULL';
+    }
 
     // Add ORDER BY to show latest first
     baseQuery += ` ORDER BY created_at DESC`;
@@ -650,6 +657,8 @@ const getAllMeltPurchases = async ({ page, limit, search, metal, status }) => {
 const updatePurchaseAccountsStatus = async (id, updateData) => {
   const connection = await pool.promise().getConnection();
   try {
+    await connection.beginTransaction();
+
     const setClause = [];
     const values = [];
 
@@ -668,7 +677,45 @@ const updatePurchaseAccountsStatus = async (id, updateData) => {
       values
     );
 
+    // Automatically insert into melt table if collected
+    if (updateData.collect_accounts_status === 1) {
+      const [rows] = await connection.query(`SELECT * FROM melting_purchase WHERE id = ?`, [id]);
+      if (rows.length > 0) {
+        const purchase = rows[0];
+        const productsStr = purchase.products || '[]';
+        let weight = 0;
+        
+        try {
+          const productsArr = JSON.parse(productsStr);
+          weight = productsArr.reduce((sum, p) => sum + (parseFloat(p.gross_weight) || parseFloat(p.weight) || 0), 0);
+        } catch(e) {
+          console.error("Error parsing products JSON:", e);
+        }
+
+        // Check if a record already exists in melt to prevent duplicates
+        const [existingMelt] = await connection.query(
+          `SELECT id FROM melt WHERE purchases LIKE ?`,
+          [`%${purchase.purchase_id}%`]
+        );
+
+        if (existingMelt.length === 0) {
+          // Find "Old Ornament" product ID
+          const [productRows] = await connection.query(`SELECT id FROM products WHERE product_name = 'Old Ornament' LIMIT 1`);
+          const productId = productRows.length > 0 ? productRows[0].id : null;
+
+          await connection.query(
+            `INSERT INTO melt (purchases, weight, metal, product, product_type) VALUES (?, ?, ?, ?, ?)`,
+            [productsStr, weight, 1, productId, 'Old Ornament'] // Defaulting to Metal 1 (Gold) and Product 'Old Ornament'
+          );
+        }
+      }
+    }
+
+    await connection.commit();
     return { success: true, purchase_id: id }; // returning purchase table ID
+  } catch (error) {
+    await connection.rollback();
+    throw error;
   } finally {
     connection.release();
   }

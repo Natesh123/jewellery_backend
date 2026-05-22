@@ -180,7 +180,8 @@ const getAllMeltReceiptProducts = async (req, res, next) => {
       metal,
       status,
       startDate,
-      endDate
+      endDate,
+      isSales
     } = req.query;
 
     const { purchases, total } = await purchaseService.getAllMeltReceiptProducts({
@@ -190,7 +191,8 @@ const getAllMeltReceiptProducts = async (req, res, next) => {
       metal,
       status,
       startDate,
-      endDate
+      endDate,
+      isSales
     });
 
     successResponse(res, {

@@ -441,7 +441,7 @@ const getAllPurchasesRegional = async (
         JOIN user_details ud_creator ON ud_creator.user_id = p.created_by
         JOIN user_details ud_manager ON ud_manager.user_id = ?
         ${where} AND ud_creator.company_id = ud_manager.company_id
-        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))
+        AND JSON_CONTAINS(ud_manager.branches, CONCAT(ud_creator.branch_id))
       `;
       dataQuery = `
         SELECT p.*
@@ -449,7 +449,7 @@ const getAllPurchasesRegional = async (
         JOIN user_details ud_creator ON ud_creator.user_id = p.created_by
         JOIN user_details ud_manager ON ud_manager.user_id = ?
         ${where} AND ud_creator.company_id = ud_manager.company_id
-        AND JSON_CONTAINS(ud_manager.branches, CAST(ud_creator.branch_id AS JSON))
+        AND JSON_CONTAINS(ud_manager.branches, CONCAT(ud_creator.branch_id))
         ORDER BY p.created_at DESC
         LIMIT ? OFFSET ?
       `;
